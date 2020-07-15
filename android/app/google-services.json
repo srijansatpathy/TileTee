@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "995669735848",
+    "firebase_url": "https://cast-74aef.firebaseio.com",
+    "project_id": "cast-74aef",
+    "storage_bucket": "cast-74aef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995669735848:android:9ffd6a7a38aa7bca7ac59d",
+        "android_client_info": {
+          "package_name": "srijansatpathy.cast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995669735848-iu9t9hkju2t7ksamr6abumsdn4htnr3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8-p-f8IyVa6HKTYji0M_1nSHBHVuUnzc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995669735848-iu9t9hkju2t7ksamr6abumsdn4htnr3v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
