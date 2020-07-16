@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mi_card/feedbackPage.dart';
+import 'package:mi_card/introRecap.dart';
 import 'package:mi_card/isSignedIn.dart';
 import 'package:mi_card/loading1guest.dart';
 import 'package:flutter/services.dart';
@@ -33,7 +34,61 @@ class _MyAppState extends State<Main> {
     return WillPopScope(
       onWillPop: () async => false,
       child: new Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Padding(
+          padding: const EdgeInsets.only(bottom: 30.0, right: 23.0, left: 23.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              FloatingActionButton.extended(
+                heroTag: 'btn1',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => IntroRecap(),
+                        fullscreenDialog: true),
+                  );
+                },
+                icon: Icon(
+                  Icons.replay,
+                  color: Colors.black,
+                ),
+                label: Text(
+                  'Intro',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'OpenSans',
+                      color: Colors.black),
+                ),
+                backgroundColor: Colors.blue,
+              ),
+              FloatingActionButton.extended(
+                heroTag: 'btn2',
+                onPressed: () async {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FeedbackPage(),
+                      ));
+                },
+                icon: Icon(
+                  Icons.record_voice_over,
+                  color: Colors.black,
+                ),
+                label: Text(
+                  'Feedback',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'OpenSans',
+                      color: Colors.black),
+                ),
+                backgroundColor: Colors.blue,
+              )
+            ],
+          ),
+        ),
+        /*floatingActionButton: Padding(
           padding: const EdgeInsets.only(right: 7.0, bottom: 10.0),
           child: FloatingActionButton.extended(
             backgroundColor: Colors.blue,
@@ -56,7 +111,7 @@ class _MyAppState extends State<Main> {
               color: Colors.black,
             ),
           ),
-        ),
+        ),*/
         backgroundColor: Colors.white,
         body: SafeArea(
           child: SingleChildScrollView(

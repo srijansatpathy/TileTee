@@ -107,40 +107,47 @@ class _ImageGridItemState extends State<ImageGridItem> {
         child: InkResponse(
       child: GridTile(child: decideGridTileViewWidget()),
       onTap: () {
-        imageName = widget._index;
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            // return object of type Dialog
-            return AlertDialog(
-              content: new Text('Transform mosaic into a shirt?',
-                  style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
-              actions: <Widget>[
-                new FlatButton(
-                  child: new Text("Yes",
-                      style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => BuyShirt()),
-                    );
-                  },
-                ),
-                // usually buttons at the bottom of the dialog
-                new FlatButton(
-                  child: new Text("No",
-                      style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-              ],
-            );
-          },
-        );
+        if (imageFile == null) {
+          print('Empty container');
+        } else {
+          imageName = widget._index;
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              // return object of type Dialog
+              return AlertDialog(
+                content: new Text('Transform mosaic into a shirt?',
+                    style: TextStyle(
+                        fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                actions: <Widget>[
+                  new FlatButton(
+                    child: new Text("Yes",
+                        style: TextStyle(
+                            fontFamily: 'OpenSans',
+                            fontWeight: FontWeight.bold)),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BuyShirt()),
+                      );
+                    },
+                  ),
+                  // usually buttons at the bottom of the dialog
+                  new FlatButton(
+                    child: new Text("No",
+                        style: TextStyle(
+                            fontFamily: 'OpenSans',
+                            fontWeight: FontWeight.bold)),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+        }
       },
     ));
   }

@@ -36,7 +36,8 @@ class Grid1 extends StatelessWidget {
                       builder: (BuildContext context) {
                         // return object of type Dialog
                         return AlertDialog(
-                          content: new Text('Quit the run-through?',
+                          content: new Text(
+                              'Quit the run-through and exit app?',
                               style: TextStyle(
                                   fontFamily: 'OpenSans',
                                   fontWeight: FontWeight.bold)),

@@ -27,7 +27,7 @@ class _MyAppState extends State<BuyShirt> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text(
-            'Order your shirt',
+            'Order Your Shirt',
             style:
                 TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
           ),
