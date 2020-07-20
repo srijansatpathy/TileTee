@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:countdown_flutter/countdown_flutter.dart';
 import 'package:mi_card/guestGrid3.dart';
-import 'package:mi_card/isSignedIn.dart';
+import 'package:mi_card/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Launch3 extends StatefulWidget {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mi_card/intro.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
+
 
 class FeedbackPage extends StatefulWidget {
   @override
@@ -8,21 +9,48 @@ class FeedbackPage extends StatefulWidget {
 }
 
 class _MyAppState extends State<FeedbackPage> {
-  _launchURL(String toMailId, String subject, String body) async {
+  /*_launchURL(String toMailId, String subject, String body) async {
     var url = 'mailto:$toMailId?subject=$subject&body=$body';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
       throw 'Could not launch $url';
     }
-  }
+  }*/
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   String _feedback;
+
+  Future<void> send() async {
+    final Email email = Email(
+      body: "Feedback: $_feedback \nAppID: $id",
+      subject: 'App Feedback',
+      recipients: ['srijan.satpathy@gmail.com'],
+      isHTML: false,
+    );
+
+    String platformResponse;
+
+    try {
+      await FlutterEmailSender.send(email);
+      platformResponse = 'Thank you';
+    } catch (error) {
+      platformResponse = error.toString();
+    }
+
+    if (!mounted) return;
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text(platformResponse, style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),),
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text(
@@ -41,6 +69,11 @@ class _MyAppState extends State<FeedbackPage> {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
+                        Text('As the world sees a surge in screen time, we believe it is important to remind people of the possibilities that exist outside their devices. If you believe in our cause, help us improve this idea.\n\n-Team TileTee',
+                        style: TextStyle(fontFamily: 'OpenSans', fontStyle: FontStyle.italic),),
+                        SizedBox(
+                          height: 15.0,
+                        ),
                         Text('Thoughts/comments/suggestions:',
                             textAlign: TextAlign.left,
                             style: TextStyle(
@@ -85,7 +118,13 @@ class _MyAppState extends State<FeedbackPage> {
                           child: RaisedButton(
                               elevation: 3.0,
                               onPressed: () {
-                                showDialog(
+                                final formState =
+                                    _formKey.currentState;
+                                if (formState.validate()) {
+                                  formState.save();
+                                  send();
+                                }
+                                /*showDialog(
                                   context: context,
                                   builder: (BuildContext context) {
                                     // return object of type Dialog
@@ -114,18 +153,15 @@ class _MyAppState extends State<FeedbackPage> {
                                                 _formKey.currentState;
                                             if (formState.validate()) {
                                               formState.save();
-                                              _launchURL(
-                                                  'srijan.satpathy@gmail.com',
-                                                  'App Feedback',
-                                                  "Feedback: $_feedback \nID: $id");
                                               Navigator.of(context).pop();
+                                              send();
                                             }
                                           },
                                         ),
                                       ],
                                     );
                                   },
-                                );
+                                );*/
                               },
                               padding: EdgeInsets.symmetric(),
                               shape: RoundedRectangleBorder(

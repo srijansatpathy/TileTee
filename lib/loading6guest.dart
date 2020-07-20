@@ -16,7 +16,7 @@ class _MyAppState extends State<Splash6> {
         seconds: 3, //7
         navigateAfterSeconds: new Launch6(),
         title: new Text(
-          'Level Six: \nPut the phone down',
+          'Level Six: \n30 minutes of zen',
           textAlign: TextAlign.center,
           style: new TextStyle(
               fontFamily: 'OpenSans',
@@ -24,7 +24,7 @@ class _MyAppState extends State<Splash6> {
               fontSize: 30.0),
         ),
         loadingText: new Text(
-          'Get ready for 30 minutes of zen',
+          'Put the phone down',
           textAlign: TextAlign.center,
           style: new TextStyle(
               fontFamily: 'OpenSans',

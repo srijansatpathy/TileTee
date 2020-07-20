@@ -1,10 +1,11 @@
 import 'dart:math';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:intro_slider/dot_animation_enum.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
-import 'package:mi_card/isSignedIn.dart';
+import 'package:mi_card/main.dart';
 import 'package:mi_card/mainWelcome.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -187,6 +188,26 @@ class IntroScreenState extends State<IntroScreen> {
                       style: TextStyle(
                           fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
                   onPressed: () {
+                    Flushbar(
+                      message: 'Loading',
+                      messageText: Text(
+                        'Loading...',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'OpenSans',
+                            color: Colors.black,
+                            fontSize: 15.0),
+                      ),
+                      duration: Duration(seconds: 3),
+                      margin: EdgeInsets.all(10.0),
+                      borderRadius: 8,
+                      backgroundColor: Colors.white,
+                      icon: Icon(
+                        Icons.refresh,
+                        size: 28.0,
+                        color: Colors.blue,
+                      ),
+                    )..show(context);
                     onDonePress();
                   },
                 ),
@@ -227,6 +248,26 @@ class IntroScreenState extends State<IntroScreen> {
                       style: TextStyle(
                           fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
                   onPressed: () {
+                    Flushbar(
+                      message: 'Loading',
+                      messageText: Text(
+                        'Loading...',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'OpenSans',
+                            color: Colors.black,
+                            fontSize: 15.0),
+                      ),
+                      duration: Duration(seconds: 3),
+                      margin: EdgeInsets.all(10.0),
+                      borderRadius: 8,
+                      backgroundColor: Colors.white,
+                      icon: Icon(
+                        Icons.refresh,
+                        size: 28.0,
+                        color: Colors.blue,
+                      ),
+                    )..show(context);
                     onDonePress();
                   },
                 ),
@@ -267,6 +308,26 @@ class IntroScreenState extends State<IntroScreen> {
                       style: TextStyle(
                           fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
                   onPressed: () {
+                    Flushbar(
+                      message: 'Loading',
+                      messageText: Text(
+                        'Loading...',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'OpenSans',
+                            color: Colors.black,
+                            fontSize: 15.0),
+                      ),
+                      duration: Duration(seconds: 3),
+                      margin: EdgeInsets.all(10.0),
+                      borderRadius: 8,
+                      backgroundColor: Colors.white,
+                      icon: Icon(
+                        Icons.refresh,
+                        size: 28.0,
+                        color: Colors.blue,
+                      ),
+                    )..show(context);
                     onDonePress();
                   },
                 ),
@@ -307,6 +368,26 @@ class IntroScreenState extends State<IntroScreen> {
                       style: TextStyle(
                           fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
                   onPressed: () {
+                    Flushbar(
+                      message: 'Loading',
+                      messageText: Text(
+                        'Loading...',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'OpenSans',
+                            color: Colors.black,
+                            fontSize: 15.0),
+                      ),
+                      duration: Duration(seconds: 3),
+                      margin: EdgeInsets.all(10.0),
+                      borderRadius: 8,
+                      backgroundColor: Colors.white,
+                      icon: Icon(
+                        Icons.refresh,
+                        size: 28.0,
+                        color: Colors.blue,
+                      ),
+                    )..show(context);
                     onDonePress();
                   },
                 ),
@@ -347,6 +428,26 @@ class IntroScreenState extends State<IntroScreen> {
                       style: TextStyle(
                           fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
                   onPressed: () {
+                    Flushbar(
+                      message: 'Loading',
+                      messageText: Text(
+                        'Loading...',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'OpenSans',
+                            color: Colors.black,
+                            fontSize: 15.0),
+                      ),
+                      duration: Duration(seconds: 3),
+                      margin: EdgeInsets.all(10.0),
+                      borderRadius: 8,
+                      backgroundColor: Colors.white,
+                      icon: Icon(
+                        Icons.refresh,
+                        size: 28.0,
+                        color: Colors.blue,
+                      ),
+                    )..show(context);
                     onDonePress();
                   },
                 ),
@@ -387,6 +488,26 @@ class IntroScreenState extends State<IntroScreen> {
                       style: TextStyle(
                           fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
                   onPressed: () {
+                    Flushbar(
+                      message: 'Loading',
+                      messageText: Text(
+                        'Loading...',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'OpenSans',
+                            color: Colors.black,
+                            fontSize: 15.0),
+                      ),
+                      duration: Duration(seconds: 3),
+                      margin: EdgeInsets.all(10.0),
+                      borderRadius: 8,
+                      backgroundColor: Colors.white,
+                      icon: Icon(
+                        Icons.refresh,
+                        size: 28.0,
+                        color: Colors.blue,
+                      ),
+                    )..show(context);
                     onDonePress();
                   },
                 ),

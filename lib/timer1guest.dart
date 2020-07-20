@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:countdown_flutter/countdown_flutter.dart';
 import 'package:mi_card/guestGrid1.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:mi_card/isSignedIn.dart';
+import 'package:mi_card/main.dart';
 
 class MyApp extends StatefulWidget {
   @override

@@ -30,7 +30,7 @@ dependencies:
   custom_splash: ^0.0.2
   firebase_storage: ^3.1.6
   flushbar: ^1.10.4
-  url_launcher: ^5.5.0
+  flutter_email_sender: ^3.0.1
 
 
 dev_dependencies:

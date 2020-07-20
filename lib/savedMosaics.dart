@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mi_card/buyShirt.dart';
+import 'package:mi_card/guestGrid1.dart';
 import 'package:mi_card/intro.dart';
-import 'package:mi_card/dataHolder.dart';
 
 var imageName;
 
 class SavedMosaics extends StatelessWidget {
   Widget makeImagesGrid() {
     return GridView.builder(
-        itemCount: 1000,
+        itemCount: imageNum,
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, index) {
@@ -22,6 +22,7 @@ class SavedMosaics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -53,6 +54,9 @@ class ImageGridItem extends StatefulWidget {
 }
 
 class _ImageGridItemState extends State<ImageGridItem> {
+  List<int> requestedIndexes = [];
+  Map<int, Uint8List> imageData = {};
+
   Uint8List imageFile;
 
   StorageReference photosReference =
@@ -82,9 +86,15 @@ class _ImageGridItemState extends State<ImageGridItem> {
     if (imageFile == null) {
       return Center();
     } else {
-      return Image.memory(
-        imageFile,
-        fit: BoxFit.fitHeight,
+      return Material(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 45.0),
+          child: Image.memory(
+            imageFile,
+            fit: BoxFit.fitHeight,
+          ),
+        ),
+        elevation: 10.0,
       );
     }
   }
@@ -103,52 +113,52 @@ class _ImageGridItemState extends State<ImageGridItem> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    for(int i=0; i<requestedIndexes.length; i++){return Container(
         child: InkResponse(
-      child: GridTile(child: decideGridTileViewWidget()),
-      onTap: () {
-        if (imageFile == null) {
-          print('Empty container');
-        } else {
-          imageName = widget._index;
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              // return object of type Dialog
-              return AlertDialog(
-                content: new Text('Transform mosaic into a shirt?',
-                    style: TextStyle(
-                        fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
-                actions: <Widget>[
-                  new FlatButton(
-                    child: new Text("Yes",
+          child: GridTile(child: decideGridTileViewWidget()),
+          onTap: () {
+            if (imageFile == null) {
+              print('Empty container');
+            } else {
+              imageName = widget._index;
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  // return object of type Dialog
+                  return AlertDialog(
+                    content: new Text('Transform mosaic into a shirt?',
                         style: TextStyle(
-                            fontFamily: 'OpenSans',
-                            fontWeight: FontWeight.bold)),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => BuyShirt()),
-                      );
-                    },
-                  ),
-                  // usually buttons at the bottom of the dialog
-                  new FlatButton(
-                    child: new Text("No",
-                        style: TextStyle(
-                            fontFamily: 'OpenSans',
-                            fontWeight: FontWeight.bold)),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
+                            fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                    actions: <Widget>[
+                      new FlatButton(
+                        child: new Text("Yes",
+                            style: TextStyle(
+                                fontFamily: 'OpenSans',
+                                fontWeight: FontWeight.bold)),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => BuyShirt()),
+                          );
+                        },
+                      ),
+                      // usually buttons at the bottom of the dialog
+                      new FlatButton(
+                        child: new Text("No",
+                            style: TextStyle(
+                                fontFamily: 'OpenSans',
+                                fontWeight: FontWeight.bold)),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
               );
-            },
-          );
-        }
-      },
-    ));
+            }
+          },
+        ));}
   }
 }

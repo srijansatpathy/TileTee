@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mi_card/intro.dart';
 import 'package:mi_card/savedMosaics.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
+
 
 class BuyShirt extends StatefulWidget {
   @override
@@ -9,21 +10,40 @@ class BuyShirt extends StatefulWidget {
 }
 
 class _MyAppState extends State<BuyShirt> {
-  _launchURL(String toMailId, String subject, String body) async {
-    var url = 'mailto:$toMailId?subject=$subject&body=$body';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
+  Future<void> send() async {
+    final Email email = Email(
+      body: "Name: $_name \nSize: $_shirtsize \nAddress: $_address \nAppID: $id \nImage: $imageName.png",
+      subject: 'Shirt Order',
+      recipients: ['srijan.satpathy@gmail.com'],
+      isHTML: false,
+    );
+
+    String platformResponse;
+
+    try {
+      await FlutterEmailSender.send(email);
+      platformResponse = 'Success';
+    } catch (error) {
+      platformResponse = error.toString();
     }
+
+    if (!mounted) return;
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text(platformResponse, style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),),
+    ));
   }
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   String _name, _shirtsize, _address;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      key: _scaffoldKey,
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text(
@@ -198,7 +218,13 @@ class _MyAppState extends State<BuyShirt> {
                         child: RaisedButton(
                             elevation: 3.0,
                             onPressed: () {
-                              showDialog(
+                              final formState =
+                                  _formKey.currentState;
+                              if (formState.validate()) {
+                                formState.save();
+                                send();
+                              }
+                              /*showDialog(
                                 context: context,
                                 builder: (BuildContext context) {
                                   // return object of type Dialog
@@ -227,18 +253,15 @@ class _MyAppState extends State<BuyShirt> {
                                               _formKey.currentState;
                                           if (formState.validate()) {
                                             formState.save();
-                                            _launchURL(
-                                                'srijan.satpathy@gmail.com',
-                                                'Shirt Order',
-                                                "Name: $_name \nSize: $_shirtsize \nAddress: $_address \nID: $id \nImage: $imageName.png");
                                             Navigator.of(context).pop();
+                                            send();
                                           }
                                         },
                                       ),
                                     ],
                                   );
                                 },
-                              );
+                              );*/
                             },
                             padding: EdgeInsets.symmetric(),
                             shape: RoundedRectangleBorder(
@@ -253,7 +276,15 @@ class _MyAppState extends State<BuyShirt> {
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'OpenSans',
                                 ))),
-                      )
+                      ),
+                      SizedBox(
+                        height: 24.0,
+                      ),
+                      Align(child: Image.asset('images/shirt2.png', height: 150.0, width: 150.0), alignment: Alignment.center,),
+                      SizedBox(
+                        height: 6.0,
+                      ),
+                      Align(child: Text('A TileTee example', style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold)), alignment: Alignment.center,)
                     ]),
               ),
             )));

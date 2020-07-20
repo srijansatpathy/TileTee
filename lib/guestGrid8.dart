@@ -7,7 +7,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:mi_card/guestGrid1.dart';
 import 'package:mi_card/intro.dart';
-import 'package:mi_card/isSignedIn.dart';
+import 'package:mi_card/main.dart';
+import 'package:mi_card/mainWelcome.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:ui' as ui;
 
@@ -17,6 +18,7 @@ class Grid8 extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async => false,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(scaffoldBackgroundColor: Colors.white),
         home: Scaffold(
           floatingActionButtonLocation:
@@ -35,7 +37,7 @@ class Grid8 extends StatelessWidget {
                         // return object of type Dialog
                         return AlertDialog(
                           content: new Text(
-                              'Finish the run-through and exit app?',
+                              'Finish the run-through?',
                               style: TextStyle(
                                   fontFamily: 'OpenSans',
                                   fontWeight: FontWeight.bold)),
@@ -51,7 +53,10 @@ class Grid8 extends StatelessWidget {
                                     await SharedPreferences.getInstance();
                                 prefs.setString('stringValue', strCurPage);
                                 print('1 hello!');
-                                SystemNavigator.pop();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Main()),
+                                );
                               },
                             ),
                             // usually buttons at the bottom of the dialog
