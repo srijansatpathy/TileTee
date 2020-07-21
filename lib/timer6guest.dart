@@ -47,7 +47,7 @@ class _MyAppState extends State<Launch6> {
                     prefs.setString('stringValue', strCurPage);
                     print('19 hello!');
                   },
-                  duration: Duration(seconds: 2),
+                  duration: Duration(minutes: 30),
                   builder: (BuildContext ctx, String remaining) {
                     return Text(
                       remaining,

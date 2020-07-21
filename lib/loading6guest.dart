@@ -13,7 +13,7 @@ class _MyAppState extends State<Splash6> {
     return WillPopScope(
       onWillPop: () async => true,
       child: new SplashScreen(
-        seconds: 3, //7
+        seconds: 7, //7
         navigateAfterSeconds: new Launch6(),
         title: new Text(
           'Level Six: \n30 minutes of zen',
