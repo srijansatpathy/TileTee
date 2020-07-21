@@ -38,7 +38,7 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
+    statusBarColor: Colors.black,
   ));
 
   SharedPreferences prefs = await SharedPreferences.getInstance();

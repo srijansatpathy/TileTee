@@ -88,7 +88,7 @@ class _ImageGridItemState extends State<ImageGridItem> {
     } else {
       return Material(
         child: Padding(
-          padding: const EdgeInsets.only(top: 45.0),
+          padding: const EdgeInsets.only(top: 50.0),
           child: Image.memory(
             imageFile,
             fit: BoxFit.fitHeight,

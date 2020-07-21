@@ -616,10 +616,11 @@ class IntroScreenState extends State<IntroScreen> {
       tabs.add(WillPopScope(
         onWillPop: () async => false,
         child: Container(
+          color: Colors.white,
           width: double.infinity,
           height: double.infinity,
           child: Container(
-            margin: EdgeInsets.only(bottom: 30.0, top: 50.0),
+            margin: EdgeInsets.only(bottom: 30.0, top: 90.0),
             child: ListView(
               children: <Widget>[
                 Padding(

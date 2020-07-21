@@ -34,6 +34,7 @@ class _MyAppState extends State<Main> {
     return WillPopScope(
       onWillPop: () async => false,
           child: new Scaffold(
+            appBar: AppBar(backgroundColor: Colors.white, elevation: 0.0),
             floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
             floatingActionButton: Padding(
               padding: const EdgeInsets.only(bottom: 30.0, right: 23.0, left: 23.0),
@@ -121,7 +122,7 @@ class _MyAppState extends State<Main> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(top: 90.0),
+                      padding: const EdgeInsets.only(top: 40.0),
                       child: Container(
                         child: Image.asset(
                           'images/logozoom.png',
@@ -155,7 +156,7 @@ class _MyAppState extends State<Main> {
                       ),
                     ),*/
                     Padding(
-                      padding: const EdgeInsets.only(top: 30.0),
+                      padding: const EdgeInsets.only(top: 30.0, bottom: 10.0),
                       child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0)),

@@ -187,64 +187,68 @@ class IntroScreenState extends State<IntroRecap> {
       Slide currentSlide = slides[i];
       tabs.add(WillPopScope(
         onWillPop: () async => true,
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: Container(
-            margin: EdgeInsets.only(bottom: 30.0, top: 50.0),
-            child: ListView(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 70.0),
-                  child: GestureDetector(
-                      child: Image.asset(
-                    currentSlide.pathImage,
-                    width: 210.0,
-                    height: 210.0,
-                    fit: BoxFit.contain,
-                  )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 40, right: 40),
-                  child: SizedBox(
-                    height: 12,
-                    width: 240,
-                    child: Divider(
-                      color: Colors.black,
-                      thickness: 1,
+        child: Scaffold(
+          appBar: AppBar(backgroundColor: Colors.white, elevation: 0.0),
+          body: Container(
+            color: Colors.white,
+            width: double.infinity,
+            height: double.infinity,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 30.0, top: 40.0),
+              child: ListView(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 70.0),
+                    child: GestureDetector(
+                        child: Image.asset(
+                      currentSlide.pathImage,
+                      width: 210.0,
+                      height: 210.0,
+                      fit: BoxFit.contain,
+                    )),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40, right: 40),
+                    child: SizedBox(
+                      height: 12,
+                      width: 240,
+                      child: Divider(
+                        color: Colors.black,
+                        thickness: 1,
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  child: Text(
-                    currentSlide.title,
-                    style: currentSlide.styleTitle,
-                    textAlign: TextAlign.center,
+                  Container(
+                    child: Text(
+                      currentSlide.title,
+                      style: currentSlide.styleTitle,
+                      textAlign: TextAlign.center,
+                    ),
+                    margin: EdgeInsets.only(top: 0.0, left: 15, right: 15),
                   ),
-                  margin: EdgeInsets.only(top: 0.0, left: 15, right: 15),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 40, right: 40),
-                  child: SizedBox(
-                    height: 20,
-                    width: 240,
-                    child: Divider(
-                      color: Colors.black,
-                      thickness: 1,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40, right: 40),
+                    child: SizedBox(
+                      height: 20,
+                      width: 240,
+                      child: Divider(
+                        color: Colors.black,
+                        thickness: 1,
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  child: Text(
-                    currentSlide.description,
-                    style: currentSlide.styleDescription,
-                    textAlign: TextAlign.center,
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
+                  Container(
+                    child: Text(
+                      currentSlide.description,
+                      style: currentSlide.styleDescription,
+                      textAlign: TextAlign.center,
+                      maxLines: 5,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    margin: EdgeInsets.only(top: 20.0, left: 15, right: 15),
                   ),
-                  margin: EdgeInsets.only(top: 20.0, left: 15, right: 15),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
