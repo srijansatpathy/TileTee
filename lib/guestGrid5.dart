@@ -97,6 +97,11 @@ class Grid5 extends StatelessWidget {
                 FloatingActionButton.extended(
                   heroTag: 'btn2',
                   onPressed: () async {
+                    timestamp = DateTime.now().millisecondsSinceEpoch;
+                    timestamp += 7000;
+                    SharedPreferences prefs1 = await SharedPreferences.getInstance();
+                    prefs1.setInt('myTimestampKey', timestamp);
+
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Splash6()),

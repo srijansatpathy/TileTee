@@ -34,8 +34,7 @@ class _MyAppState extends State<Main> {
     return WillPopScope(
       onWillPop: () async => false,
           child: new Scaffold(
-            appBar: AppBar(backgroundColor: Colors.white, elevation: 0.0),
-            floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+            /*floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
             floatingActionButton: Padding(
               padding: const EdgeInsets.only(bottom: 30.0, right: 23.0, left: 23.0),
               child: Row(
@@ -90,7 +89,7 @@ class _MyAppState extends State<Main> {
                   )
                 ],
               ),
-            ),
+            ),*/
             /*floatingActionButton: Padding(
               padding: const EdgeInsets.only(right: 7.0, bottom: 10.0),
               child: FloatingActionButton.extended(
@@ -122,13 +121,13 @@ class _MyAppState extends State<Main> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(top: 40.0),
+                      padding: const EdgeInsets.only(top: 50.0, bottom: 20.0),
                       child: Container(
                         child: Image.asset(
                           'images/logozoom.png',
                           height: 220,
                           width: 220,
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment.center,
                         ),
                       ),
                     ),
@@ -155,7 +154,141 @@ class _MyAppState extends State<Main> {
                         thickness: 2,
                       ),
                     ),*/
-                    Padding(
+                    Align(
+                      alignment: Alignment.center,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 45.0, bottom: 12.0, left: 12.0, right: 12.0),
+                        child: GridView.count(
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 6,
+                          mainAxisSpacing: 12,
+                          childAspectRatio: 1.3,
+                          children: <Widget>[
+                            GestureDetector(
+                              child: Stack(
+                                children: <Widget>[
+                                  Center(
+                                    child: Image.asset(
+                                      'images/Colors/color2.jpg',
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 25.0),
+                                    child: Center(child: Icon(Icons.build, size: 25.0, color: Colors.white,),),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 25.0),
+                                    child: Center(child: Text('Mosaic Builder', style: TextStyle(color: Colors.white, fontFamily: 'OpenSans', fontWeight: FontWeight.bold, fontSize: 16.0),),),
+                                  ),
+                                ]
+                              ),
+                              onTap: () async {
+                                timestamp = DateTime.now().millisecondsSinceEpoch;
+                                timestamp += 7000;
+                                SharedPreferences prefs1 = await SharedPreferences.getInstance();
+                                prefs1.setInt('myTimestampKey', timestamp);
+
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Splash1()),
+                                );
+                                strCurPage = 'page3';
+                                SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
+                                prefs.setString('stringValue', strCurPage);
+                                print('3 hello!');
+                              },
+                            ),
+                            GestureDetector(
+                              child: Stack(
+                                  children: <Widget>[
+                                    Center(
+                                      child: Image.asset(
+                                        'images/Colors/color6.jpg',
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(bottom: 25.0),
+                                      child: Center(child: Icon(Icons.save, size: 25.0, color: Colors.white,),),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 25.0),
+                                      child: Center(child: Text('Mosaic Gallery', style: TextStyle(color: Colors.white, fontFamily: 'OpenSans', fontWeight: FontWeight.bold, fontSize: 16.0),),),
+                                    ),
+                                  ]
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SavedMosaics()),
+                                );
+                              },
+                            ),
+                            GestureDetector(
+                              child: Stack(
+                                  children: <Widget>[
+                                    Center(
+                                      child: Image.asset(
+                                        'images/Colors/color3.jpg',
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(bottom: 25.0),
+                                      child: Center(child: Icon(Icons.replay, size: 25.0, color: Colors.white,),),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 25.0),
+                                      child: Center(child: Text('Introduction', style: TextStyle(color: Colors.white, fontFamily: 'OpenSans', fontWeight: FontWeight.bold, fontSize: 16.0),),),
+                                    ),
+                                  ]
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => IntroRecap(),
+                                      fullscreenDialog: true),
+                                );
+                              },
+                            ),
+                            GestureDetector(
+                              child: Stack(
+                                  children: <Widget>[
+                                    Center(
+                                      child: Image.asset(
+                                        'images/Colors/color8.jpg',
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(bottom: 25.0),
+                                      child: Center(child: Icon(Icons.feedback, size: 25.0, color: Colors.white,),),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 25.0),
+                                      child: Center(child: Text('Feedback', style: TextStyle(color: Colors.white, fontFamily: 'OpenSans', fontWeight: FontWeight.bold, fontSize: 16.0),),),
+                                    ),
+                                  ]
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FeedbackPage(),
+                                    ));
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    /*Padding(
                       padding: const EdgeInsets.only(top: 30.0, bottom: 10.0),
                       child: Card(
                         shape: RoundedRectangleBorder(
@@ -222,7 +355,7 @@ class _MyAppState extends State<Main> {
                                   builder: (context) => SavedMosaics()),
                             );
                           },
-                        )),
+                        )),*/
                   ],
                 ),
               ),

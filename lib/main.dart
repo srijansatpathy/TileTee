@@ -30,6 +30,8 @@ import 'package:mi_card/timer8guest.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 var strCurPage;
+var timestamp;
+DateTime now;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +40,7 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.black,
+    statusBarColor: Colors.transparent,
   ));
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -47,11 +49,20 @@ void main() async {
   SharedPreferences _prefs = await SharedPreferences.getInstance();
   int intValue = _prefs.getInt('intValue');
 
+  SharedPreferences _prefs1 = await SharedPreferences.getInstance();
+  int pressed = _prefs1.getInt('pressedNum');
+
+  SharedPreferences prefs1 = await SharedPreferences.getInstance();
+  int timestamp = prefs1.getInt('myTimestampKey');
+
   if (stringValue == null) {
     stringValue = 'page0';
   }
   if (intValue == null) {
     intValue = 0;
+  }
+  if (pressed == null) {
+    pressed = 0;
   }
   switch (stringValue) {
     case 'page0':
@@ -64,6 +75,7 @@ void main() async {
       break;
     case 'page1':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -72,6 +84,7 @@ void main() async {
       break;
     case 'page2':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -81,6 +94,8 @@ void main() async {
 
     case 'page3':
       {
+        now = DateTime.fromMillisecondsSinceEpoch(timestamp);
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -90,6 +105,7 @@ void main() async {
 
     case 'page4':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -99,6 +115,7 @@ void main() async {
 
     case 'page5':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -108,6 +125,8 @@ void main() async {
 
     case 'page6':
       {
+        now = DateTime.fromMillisecondsSinceEpoch(timestamp);
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -117,6 +136,7 @@ void main() async {
 
     case 'page7':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -126,6 +146,7 @@ void main() async {
 
     case 'page8':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -135,6 +156,8 @@ void main() async {
 
     case 'page9':
       {
+        now = DateTime.fromMillisecondsSinceEpoch(timestamp);
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -144,6 +167,7 @@ void main() async {
 
     case 'page10':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -153,6 +177,7 @@ void main() async {
 
     case 'page11':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -162,6 +187,8 @@ void main() async {
 
     case 'page12':
       {
+        now = DateTime.fromMillisecondsSinceEpoch(timestamp);
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -171,6 +198,7 @@ void main() async {
 
     case 'page13':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -180,6 +208,7 @@ void main() async {
 
     case 'page14':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -189,6 +218,8 @@ void main() async {
 
     case 'page15':
       {
+        now = DateTime.fromMillisecondsSinceEpoch(timestamp);
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -198,6 +229,7 @@ void main() async {
 
     case 'page16':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -207,6 +239,7 @@ void main() async {
 
     case 'page17':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -216,6 +249,8 @@ void main() async {
 
     case 'page18':
       {
+        now = DateTime.fromMillisecondsSinceEpoch(timestamp);
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -225,6 +260,7 @@ void main() async {
 
     case 'page19':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -234,6 +270,7 @@ void main() async {
 
     case 'page20':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -243,6 +280,8 @@ void main() async {
 
     case 'page21':
       {
+        now = DateTime.fromMillisecondsSinceEpoch(timestamp);
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -252,6 +291,7 @@ void main() async {
 
     case 'page22':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -261,6 +301,7 @@ void main() async {
 
     case 'page23':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -270,6 +311,8 @@ void main() async {
 
     case 'page24':
       {
+        now = DateTime.fromMillisecondsSinceEpoch(timestamp);
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;
@@ -279,6 +322,7 @@ void main() async {
 
     case 'page25':
       {
+        counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
         id = user.email;

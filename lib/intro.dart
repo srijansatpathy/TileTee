@@ -75,7 +75,7 @@ class IntroScreenState extends State<IntroScreen> {
     );
     slides.add(
       new Slide(
-        title: "Put your phone down when the timer starts",
+        title: "Put your phone down when the level starts",
         styleTitle: TextStyle(
             color: Colors.black,
             fontSize: 30.0,
@@ -163,6 +163,7 @@ class IntroScreenState extends State<IntroScreen> {
         style: TextStyle(fontFamily: 'OpenSans'),
       ),
       onPressed: () {
+        Navigator.of(context).pop();
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -223,6 +224,7 @@ class IntroScreenState extends State<IntroScreen> {
         style: TextStyle(fontFamily: 'OpenSans'),
       ),
       onPressed: () {
+        Navigator.of(context).pop();
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -283,6 +285,7 @@ class IntroScreenState extends State<IntroScreen> {
         style: TextStyle(fontFamily: 'OpenSans'),
       ),
       onPressed: () {
+        Navigator.of(context).pop();
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -343,6 +346,7 @@ class IntroScreenState extends State<IntroScreen> {
         style: TextStyle(fontFamily: 'OpenSans'),
       ),
       onPressed: () {
+        Navigator.of(context).pop();
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -403,6 +407,7 @@ class IntroScreenState extends State<IntroScreen> {
         style: TextStyle(fontFamily: 'OpenSans'),
       ),
       onPressed: () {
+        Navigator.of(context).pop();
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -463,6 +468,7 @@ class IntroScreenState extends State<IntroScreen> {
         style: TextStyle(fontFamily: 'OpenSans'),
       ),
       onPressed: () {
+        Navigator.of(context).pop();
         showDialog(
           context: context,
           builder: (BuildContext context) {

@@ -31,6 +31,7 @@ dependencies:
   firebase_storage: ^3.1.6
   flushbar: ^1.10.4
   flutter_email_sender: ^3.0.1
+  intl: ^0.16.1
 
 
 dev_dependencies:
@@ -51,6 +52,9 @@ flutter:
 
     # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/tenMin.mp3
+    - assets/oneMin.mp3
+    - assets/sunset.mp3
     - images/brush-307607_1280.png
     - images/castle-378352_1280.png
     - images/chronograph-160753_1280.png
@@ -75,7 +79,6 @@ flutter:
     - images/shirt2.png
     - images/logozoom.png
     - images/logosplash.png
-
 
   fonts:
     - family: AbrilFatface
