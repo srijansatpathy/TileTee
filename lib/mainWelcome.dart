@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mi_card/feedbackPage.dart';
-import 'package:mi_card/introRecap.dart';
 import 'package:mi_card/main.dart';
 import 'package:mi_card/loading1guest.dart';
 import 'package:flutter/services.dart';
 import 'package:mi_card/savedMosaics.dart';
+import 'package:mi_card/statsPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Main extends StatefulWidget {
@@ -59,7 +59,7 @@ class _MyAppState extends State<Main> {
                       'Intro',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'OpenSans',
+                          fontFamily: 'Manrope',
                           color: Colors.black),
                     ),*/
                     backgroundColor: Colors.blue,
@@ -82,7 +82,7 @@ class _MyAppState extends State<Main> {
                       'Feedback',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'OpenSans',
+                          fontFamily: 'Manrope',
                           color: Colors.black),
                     ),*/
                     backgroundColor: Colors.blue,
@@ -104,7 +104,7 @@ class _MyAppState extends State<Main> {
                 label: Text(
                   'Feedback',
                   style: TextStyle(
-                      fontFamily: 'OpenSans',
+                      fontFamily: 'Manrope',
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
                 ),
@@ -115,49 +115,55 @@ class _MyAppState extends State<Main> {
               ),
             ),*/
             backgroundColor: Colors.white,
-            body: SafeArea(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 50.0, bottom: 20.0),
-                      child: Container(
-                        child: Image.asset(
-                          'images/logozoom.png',
-                          height: 220,
-                          width: 220,
-                          alignment: Alignment.center,
-                        ),
+            body: Column(
+              children: <Widget>[
+                Expanded(
+                  flex: 5,
+                  child: Container(
+                  ),
+                ),
+                Expanded(
+                  flex: 45,
+                  child: Container(
+                    child: Center(
+                      child: Image.asset(
+                        'images/logozoom.png',
+                        height: 240,
+                        width: 240,
                       ),
                     ),
-                    /*SizedBox(
-                      height: 0,
-                      width: 240,
-                      child: Divider(
-                        color: Colors.black,
-                        thickness: 2,
-                      ),
-                    ),
-                    Text(
-                      'Build beautiful mosaics. \nWear your designs. \nSpend less screen time.',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: 'OpenSans',
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 8,
-                      width: 240,
-                      child: Divider(
-                        color: Colors.black,
-                        thickness: 2,
-                      ),
-                    ),*/
-                    Align(
-                      alignment: Alignment.center,
+                  ),
+                ),
+                /*SizedBox(
+                  height: 0,
+                  width: 240,
+                  child: Divider(
+                    color: Colors.black,
+                    thickness: 2,
+                  ),
+                ),
+                Text(
+                  'Build beautiful mosaics. \nWear your designs. \nSpend less screen time.',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 8,
+                  width: 240,
+                  child: Divider(
+                    color: Colors.black,
+                    thickness: 2,
+                  ),
+                ),*/
+                Expanded(
+                  flex: 50,
+                  child: Container(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 45.0, bottom: 12.0, left: 12.0, right: 12.0),
+                        padding: const EdgeInsets.all(12.0),
                         child: GridView.count(
                           scrollDirection: Axis.vertical,
                           shrinkWrap: true,
@@ -177,11 +183,11 @@ class _MyAppState extends State<Main> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(bottom: 25.0),
-                                    child: Center(child: Icon(Icons.build, size: 25.0, color: Colors.white,),),
+                                    child: Center(child: Icon(Icons.crop_square, size: 25.0, color: Colors.white,),),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 25.0),
-                                    child: Center(child: Text('Mosaic Builder', style: TextStyle(color: Colors.white, fontFamily: 'OpenSans', fontWeight: FontWeight.bold, fontSize: 16.0),),),
+                                    child: Center(child: Text('Save Time', style: TextStyle(color: Colors.white, fontFamily: 'Manrope', fontWeight: FontWeight.bold, fontSize: 16.0),),),
                                   ),
                                 ]
                               ),
@@ -217,7 +223,7 @@ class _MyAppState extends State<Main> {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(top: 25.0),
-                                      child: Center(child: Text('Mosaic Gallery', style: TextStyle(color: Colors.white, fontFamily: 'OpenSans', fontWeight: FontWeight.bold, fontSize: 16.0),),),
+                                      child: Center(child: Text('Mosaic Gallery', style: TextStyle(color: Colors.white, fontFamily: 'Manrope', fontWeight: FontWeight.bold, fontSize: 16.0),),),
                                     ),
                                   ]
                               ),
@@ -240,20 +246,25 @@ class _MyAppState extends State<Main> {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(bottom: 25.0),
-                                      child: Center(child: Icon(Icons.replay, size: 25.0, color: Colors.white,),),
+                                      child: Center(child: Icon(Icons.timeline, size: 25.0, color: Colors.white,),),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(top: 25.0),
-                                      child: Center(child: Text('Introduction', style: TextStyle(color: Colors.white, fontFamily: 'OpenSans', fontWeight: FontWeight.bold, fontSize: 16.0),),),
+                                      child: Center(child: Text('Progress', style: TextStyle(color: Colors.white, fontFamily: 'Manrope', fontWeight: FontWeight.bold, fontSize: 16.0),),),
                                     ),
                                   ]
                               ),
                               onTap: () {
-                                Navigator.push(
+                                /*Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => IntroRecap(),
                                       fullscreenDialog: true),
+                                );*/
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => StatsPage()),
                                 );
                               },
                             ),
@@ -272,7 +283,7 @@ class _MyAppState extends State<Main> {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(top: 25.0),
-                                      child: Center(child: Text('Feedback', style: TextStyle(color: Colors.white, fontFamily: 'OpenSans', fontWeight: FontWeight.bold, fontSize: 16.0),),),
+                                      child: Center(child: Text('Feedback', style: TextStyle(color: Colors.white, fontFamily: 'Manrope', fontWeight: FontWeight.bold, fontSize: 16.0),),),
                                     ),
                                   ]
                               ),
@@ -288,77 +299,77 @@ class _MyAppState extends State<Main> {
                         ),
                       ),
                     ),
-                    /*Padding(
-                      padding: const EdgeInsets.only(top: 30.0, bottom: 10.0),
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0)),
-                        color: Colors.black,
-                        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                        child: ListTile(
-                          leading: Icon(Icons.arrow_forward, color: Colors.blue),
-                          title: Text(
-                            'MOSAIC BUILDER',
-                            style: TextStyle(
-                                fontFamily: 'OpenSans',
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          onTap: () async {
-                            /*_email = getRandomString(5) + '@random.com';
-                            _password = getRandomString(6).trim();
-                            print(_email);
-                            print(_password);
-                            try {
-                              FirebaseUser user = (await FirebaseAuth.instance
-                                      .createUserWithEmailAndPassword(
-                                          email: _email.trim(), password: _password))
-                                  .user;
-                            } catch (e) {
-                              _email = getRandomString(5) + '@random.com';
-                              FirebaseUser user = (await FirebaseAuth.instance
-                                      .createUserWithEmailAndPassword(
-                                          email: _email.trim(), password: _password))
-                                  .user;
-                            }*/
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Splash1()),
-                            );
-                            strCurPage = 'page3';
-                            SharedPreferences prefs =
-                                await SharedPreferences.getInstance();
-                            prefs.setString('stringValue', strCurPage);
-                            print('3 hello!');
-                          },
-                        ),
-                      ),
-                    ),
-                    Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0)),
-                        color: Colors.black,
-                        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                        child: ListTile(
-                          leading: Icon(Icons.save, color: Colors.blue),
-                          title: Text(
-                            'MOSAIC GALLERY',
-                            style: TextStyle(
-                                fontFamily: 'OpenSans',
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SavedMosaics()),
-                            );
-                          },
-                        )),*/
-                  ],
+                  ),
                 ),
-              ),
+                /*Padding(
+                  padding: const EdgeInsets.only(top: 30.0, bottom: 10.0),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0)),
+                    color: Colors.black,
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                    child: ListTile(
+                      leading: Icon(Icons.arrow_forward, color: Colors.blue),
+                      title: Text(
+                        'MOSAIC BUILDER',
+                        style: TextStyle(
+                            fontFamily: 'Manrope',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      onTap: () async {
+                        /*_email = getRandomString(5) + '@random.com';
+                        _password = getRandomString(6).trim();
+                        print(_email);
+                        print(_password);
+                        try {
+                          FirebaseUser user = (await FirebaseAuth.instance
+                                  .createUserWithEmailAndPassword(
+                                      email: _email.trim(), password: _password))
+                              .user;
+                        } catch (e) {
+                          _email = getRandomString(5) + '@random.com';
+                          FirebaseUser user = (await FirebaseAuth.instance
+                                  .createUserWithEmailAndPassword(
+                                      email: _email.trim(), password: _password))
+                              .user;
+                        }*/
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Splash1()),
+                        );
+                        strCurPage = 'page3';
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        prefs.setString('stringValue', strCurPage);
+                        print('3 hello!');
+                      },
+                    ),
+                  ),
+                ),
+                Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0)),
+                    color: Colors.black,
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                    child: ListTile(
+                      leading: Icon(Icons.save, color: Colors.blue),
+                      title: Text(
+                        'MOSAIC GALLERY',
+                        style: TextStyle(
+                            fontFamily: 'Manrope',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SavedMosaics()),
+                        );
+                      },
+                    )),*/
+              ],
             ),
           ),
     );

@@ -28,9 +28,10 @@ import 'package:mi_card/timer6guest.dart';
 import 'package:mi_card/timer7guest.dart';
 import 'package:mi_card/timer8guest.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:mi_card/statsPage.dart';
 
-var strCurPage;
-var timestamp;
+String strCurPage;
+int timestamp;
 DateTime now;
 
 void main() async {
@@ -39,9 +40,10 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  SystemChrome.setEnabledSystemUIOverlays([]); // Hides the Top bar
+  /*SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
-  ));
+  ));*/
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String stringValue = prefs.getString('stringValue');
@@ -55,6 +57,15 @@ void main() async {
   SharedPreferences prefs1 = await SharedPreferences.getInstance();
   int timestamp = prefs1.getInt('myTimestampKey');
 
+  SharedPreferences prefs2 = await SharedPreferences.getInstance();
+  int tileCount = prefs2.getInt('tiles');
+
+  SharedPreferences _prefs2 = await SharedPreferences.getInstance();
+  double timeTotal = _prefs2.getDouble('timeSaved');
+
+  SharedPreferences prefs3 = await SharedPreferences.getInstance();
+  int shirtsDonated = prefs3.getInt('donationsNum');
+
   if (stringValue == null) {
     stringValue = 'page0';
   }
@@ -64,9 +75,23 @@ void main() async {
   if (pressed == null) {
     pressed = 0;
   }
+  if (tileCount == null){
+    tileCount = 0;
+  }
+  if (timeTotal == null){
+    timeTotal = 0;
+  }
+  if (shirtsDonated == null){
+    shirtsDonated = 0;
+  }
   switch (stringValue) {
     case 'page0':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
+        counter = pressed;
+        imageNum = intValue;
         runApp(MaterialApp(
           home: IntroScreen(),
           debugShowCheckedModeBanner: false,
@@ -75,6 +100,9 @@ void main() async {
       break;
     case 'page1':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -84,6 +112,9 @@ void main() async {
       break;
     case 'page2':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -94,6 +125,9 @@ void main() async {
 
     case 'page3':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         now = DateTime.fromMillisecondsSinceEpoch(timestamp);
         counter = pressed;
         imageNum = intValue;
@@ -105,6 +139,9 @@ void main() async {
 
     case 'page4':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -115,6 +152,9 @@ void main() async {
 
     case 'page5':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -125,6 +165,9 @@ void main() async {
 
     case 'page6':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         now = DateTime.fromMillisecondsSinceEpoch(timestamp);
         counter = pressed;
         imageNum = intValue;
@@ -136,6 +179,9 @@ void main() async {
 
     case 'page7':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -146,6 +192,9 @@ void main() async {
 
     case 'page8':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -156,6 +205,9 @@ void main() async {
 
     case 'page9':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         now = DateTime.fromMillisecondsSinceEpoch(timestamp);
         counter = pressed;
         imageNum = intValue;
@@ -167,6 +219,9 @@ void main() async {
 
     case 'page10':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -177,6 +232,9 @@ void main() async {
 
     case 'page11':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -187,6 +245,9 @@ void main() async {
 
     case 'page12':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         now = DateTime.fromMillisecondsSinceEpoch(timestamp);
         counter = pressed;
         imageNum = intValue;
@@ -198,6 +259,9 @@ void main() async {
 
     case 'page13':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -208,6 +272,9 @@ void main() async {
 
     case 'page14':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -218,6 +285,9 @@ void main() async {
 
     case 'page15':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         now = DateTime.fromMillisecondsSinceEpoch(timestamp);
         counter = pressed;
         imageNum = intValue;
@@ -229,6 +299,9 @@ void main() async {
 
     case 'page16':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -239,6 +312,9 @@ void main() async {
 
     case 'page17':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -249,6 +325,9 @@ void main() async {
 
     case 'page18':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         now = DateTime.fromMillisecondsSinceEpoch(timestamp);
         counter = pressed;
         imageNum = intValue;
@@ -260,6 +339,9 @@ void main() async {
 
     case 'page19':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -270,6 +352,9 @@ void main() async {
 
     case 'page20':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -280,6 +365,9 @@ void main() async {
 
     case 'page21':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         now = DateTime.fromMillisecondsSinceEpoch(timestamp);
         counter = pressed;
         imageNum = intValue;
@@ -291,6 +379,9 @@ void main() async {
 
     case 'page22':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -301,6 +392,9 @@ void main() async {
 
     case 'page23':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();
@@ -311,6 +405,9 @@ void main() async {
 
     case 'page24':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         now = DateTime.fromMillisecondsSinceEpoch(timestamp);
         counter = pressed;
         imageNum = intValue;
@@ -322,6 +419,9 @@ void main() async {
 
     case 'page25':
       {
+        donations = shirtsDonated;
+        hour = timeTotal;
+        tileNum = tileCount;
         counter = pressed;
         imageNum = intValue;
         FirebaseUser user = await FirebaseAuth.instance.currentUser();

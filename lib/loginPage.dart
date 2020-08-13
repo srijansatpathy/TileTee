@@ -21,19 +21,19 @@ class _LoginPageState extends State<LoginPage> {
               title: Text(
                 "Would you like to exit the app?",
                 style: TextStyle(
-                    fontWeight: FontWeight.bold, fontFamily: 'OpenSans'),
+                    fontWeight: FontWeight.bold, fontFamily: 'Manrope'),
               ),
               actions: <Widget>[
                 FlatButton(
                   child: Text("No",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, fontFamily: 'OpenSans')),
+                          fontWeight: FontWeight.bold, fontFamily: 'Manrope')),
                   onPressed: () => Navigator.pop(context, false),
                 ),
                 FlatButton(
                   child: Text("Yes",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, fontFamily: 'OpenSans')),
+                          fontWeight: FontWeight.bold, fontFamily: 'Manrope')),
                   onPressed: () => Navigator.pop(context, true),
                 )
               ],
@@ -55,14 +55,14 @@ class _LoginPageState extends State<LoginPage> {
             label: Text(
               'Forgot password?',
               style: TextStyle(
-                  fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                  fontFamily: 'Manrope', fontWeight: FontWeight.bold),
             )),
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text(
             'SIGN IN',
             style:
-                TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
           ),
         ),
         body: Form(
@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
               Text('Email',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      fontFamily: 'OpenSans',
+                      fontFamily: 'Manrope',
                       color: Colors.black,
                       fontSize: 23,
                       fontWeight: FontWeight.bold)),
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 50.0,
                 child: TextFormField(
                   obscureText: false,
-                  style: TextStyle(color: Colors.black, fontFamily: 'OpenSans'),
+                  style: TextStyle(color: Colors.black, fontFamily: 'Manrope'),
                   validator: (input) {
                     if (input.isEmpty) {
                       return 'Provide an email';
@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
               Text('Password',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      fontFamily: 'OpenSans',
+                      fontFamily: 'Manrope',
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 23)),
@@ -117,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: Alignment.centerLeft,
                 height: 50.0,
                 child: TextFormField(
-                  style: TextStyle(color: Colors.black, fontFamily: 'OpenSans'),
+                  style: TextStyle(color: Colors.black, fontFamily: 'Manrope'),
                   validator: (input) {
                     if (input.length < 6) {
                       return 'Longer password please';
@@ -152,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                           letterSpacing: 1.5,
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'OpenSans',
+                          fontFamily: 'Manrope',
                         ))),
               ),
             ])));
@@ -180,13 +180,13 @@ class _LoginPageState extends State<LoginPage> {
             return AlertDialog(
               content: new Text('Please check your email or password.',
                   style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                      fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
               actions: <Widget>[
                 // usually buttons at the bottom of the dialog
                 new FlatButton(
                   child: new Text("OK",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },

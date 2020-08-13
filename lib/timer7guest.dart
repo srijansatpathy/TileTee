@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:mi_card/guestGrid7.dart';
+import 'package:mi_card/loading8guest.dart';
 import 'package:mi_card/main.dart';
+import 'package:mi_card/mainWelcome.dart';
 import 'package:mi_card/timer1guest.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -30,7 +31,7 @@ class _MyAppState extends State<Launch7> {
               title: Text(
                 _done ? 'Finished!' : 'LEVEL SEVEN',
                 style: TextStyle(
-                    fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                    fontFamily: 'Manrope', fontWeight: FontWeight.bold),
               )),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -52,7 +53,7 @@ class _MyAppState extends State<Launch7> {
                   builder: (BuildContext ctx, String remaining) {
                     return Text(
                       remaining,
-                      style: TextStyle(fontSize: 50, fontFamily: 'OpenSans'),
+                      style: TextStyle(fontSize: 50, fontFamily: 'Manrope'),
                     ); // 01:00:00
                   },
                 ),
@@ -71,7 +72,7 @@ class Launch7 extends StatelessWidget {
     if (now == null){
       now = DateTime.now();
     }
-    DateTime kd = now.add(Duration(minutes: 35));
+    DateTime kd = now.add(Duration(minutes: 84));
     String formattedDateHr = DateFormat('hh:mm').format(kd);
     String formattedDateSec = DateFormat('ss').format(kd);
     return WillPopScope(
@@ -79,14 +80,53 @@ class Launch7 extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
+          backgroundColor: Colors.white,
           appBar: AppBar(
-            title: Text('LEVEL SEVEN', style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),),backgroundColor: Colors.black,
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.white,
+                  size: 40.0,
+                ),
+                onPressed: () async{
+                  if (DateTime.now().isAfter(kd) || DateTime.now().isAtSameMomentAs(kd)){
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => Main()),
+                    );
+                    now = null;
+                    counter = 0;
+                    SharedPreferences prefs1 =
+                    await SharedPreferences.getInstance();
+                    prefs1.setInt('pressedNum', counter);
+
+                    hour += 1.4;
+                    SharedPreferences _prefs1 =
+                    await SharedPreferences.getInstance();
+                    _prefs1.setDouble('timeSaved', hour);
+
+                    tileNum += 7;
+                    SharedPreferences _prefs =
+                    await SharedPreferences.getInstance();
+                    _prefs.setInt('tiles', tileNum);
+
+                    strCurPage = 'page1';
+                    SharedPreferences prefs =
+                    await SharedPreferences.getInstance();
+                    prefs.setString('stringValue', strCurPage);
+                    print('1 hello!');
+                  }
+                },
+              )
+            ],
+            title: Text('LEVEL SEVEN', style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),),backgroundColor: Colors.black,
           ),
           body: Stack(
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 130.0),
-                child: Center(child: Text('Level ends at',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30.0, fontFamily: 'OpenSans', color: Colors.black
+                child: Center(child: Text('Level ends at',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30.0, fontFamily: 'Manrope', color: Colors.black
                 ),)),
               ),
               Row(
@@ -94,9 +134,9 @@ class Launch7 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 textBaseline: TextBaseline.ideographic,
                 children: <Widget>[
-                  Center(child: Text(formattedDateHr+'  ',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40.0, fontFamily: 'OpenSans', color: Colors.black
+                  Center(child: Text(formattedDateHr+'  ',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40.0, fontFamily: 'Manrope', color: Colors.black
                   ),)),
-                  Center(child: Text(formattedDateSec,textAlign: TextAlign.center,style: TextStyle(fontSize: 30.0, fontFamily: 'OpenSans', color: Colors.black
+                  Center(child: Text(formattedDateSec,textAlign: TextAlign.center,style: TextStyle(fontSize: 30.0, fontFamily: 'Manrope', color: Colors.black
                   ),)),
                 ],
               ),
@@ -117,18 +157,23 @@ class Launch7 extends StatelessWidget {
                                 content: new Text(
                                     "You pressed 'Proceed' prematurely ${counter} times. Relax.",
                                     style: TextStyle(
-                                        fontFamily: 'OpenSans',
+                                        fontFamily: 'Manrope',
                                         fontWeight: FontWeight.bold)),
                                 actions: <Widget>[
                                   new FlatButton(
                                     child: new Text("OK",
                                         style: TextStyle(
-                                            fontFamily: 'OpenSans',
+                                            fontFamily: 'Manrope',
                                             fontWeight: FontWeight.bold)),
                                     onPressed: () async{
+                                      timestamp = DateTime.now().millisecondsSinceEpoch;
+                                      timestamp += 7000;
+                                      SharedPreferences prefs2 = await SharedPreferences.getInstance();
+                                      prefs2.setInt('myTimestampKey', timestamp);
+
                                       Navigator.pushReplacement(
                                         context,
-                                        MaterialPageRoute(builder: (context) => Grid7()),
+                                        MaterialPageRoute(builder: (context) => Splash8()),
                                       );
                                       now = null;
                                       counter = 0;
@@ -136,11 +181,21 @@ class Launch7 extends StatelessWidget {
                                       await SharedPreferences.getInstance();
                                       prefs1.setInt('pressedNum', counter);
 
-                                      strCurPage = 'page22';
+                                      hour += 1.4;
+                                      SharedPreferences _prefs1 =
+                                      await SharedPreferences.getInstance();
+                                      _prefs1.setDouble('timeSaved', hour);
+
+                                      tileNum += 7;
+                                      SharedPreferences _prefs =
+                                      await SharedPreferences.getInstance();
+                                      _prefs.setInt('tiles', tileNum);
+
+                                      strCurPage = 'page24';
                                       SharedPreferences prefs =
                                       await SharedPreferences.getInstance();
                                       prefs.setString('stringValue', strCurPage);
-                                      print('22 hello!');
+                                      print('24 hello!');
                                     },
                                   ),
                                 ],
@@ -149,9 +204,14 @@ class Launch7 extends StatelessWidget {
                           );
                         }
                         else{
+                          timestamp = DateTime.now().millisecondsSinceEpoch;
+                          timestamp += 7000;
+                          SharedPreferences prefs2 = await SharedPreferences.getInstance();
+                          prefs2.setInt('myTimestampKey', timestamp);
+
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(builder: (context) => Grid7()),
+                            MaterialPageRoute(builder: (context) => Splash8()),
                           );
                           now = null;
                           counter = 0;
@@ -159,11 +219,21 @@ class Launch7 extends StatelessWidget {
                           await SharedPreferences.getInstance();
                           prefs1.setInt('pressedNum', counter);
 
-                          strCurPage = 'page22';
+                          hour += 1.4;
+                          SharedPreferences _prefs1 =
+                          await SharedPreferences.getInstance();
+                          _prefs1.setDouble('timeSaved', hour);
+
+                          tileNum += 7;
+                          SharedPreferences _prefs =
+                          await SharedPreferences.getInstance();
+                          _prefs.setInt('tiles', tileNum);
+
+                          strCurPage = 'page24';
                           SharedPreferences prefs =
                           await SharedPreferences.getInstance();
                           prefs.setString('stringValue', strCurPage);
-                          print('22 hello!');
+                          print('24 hello!');
                         }
                       }
                       else{
@@ -173,7 +243,7 @@ class Launch7 extends StatelessWidget {
                         prefs.setInt('pressedNum', counter);
                       }
                     },
-                    label: Text('Proceed', style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 25.0),),
+                    label: Text('Proceed', style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 25.0),),
                     icon: Icon(Icons.navigate_next, color: Colors.black,),
                   ),
                 ),

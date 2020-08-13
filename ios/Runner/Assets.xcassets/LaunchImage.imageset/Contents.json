@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logosplash copy.png",
+      "filename" : "logozoom.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "logosplash copy-1.png",
+      "filename" : "logozoom-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logosplash copy-2.png",
+      "filename" : "logozoom-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

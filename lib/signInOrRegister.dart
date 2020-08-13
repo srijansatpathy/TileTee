@@ -16,7 +16,7 @@ class _WelcomePageState extends State<WelcomePage> {
         backgroundColor: Colors.black,
         title: Text(
           'CAST',
-          style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+          style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
         ),
       ),
       body: SafeArea(
@@ -31,7 +31,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     title: Text(
                       'SIGN IN',
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold),
                     ),
                     onTap: navigateSignIn)),
             Card(
@@ -42,7 +42,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     title: Text(
                       'REGISTER',
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold),
                     ),
                     onTap: navigateSignUp)),
           ],

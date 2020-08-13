@@ -29,7 +29,7 @@ class _HomeState extends State<Dashb> {
             title: Text(
               'DASHBOARD',
               style: TextStyle(
-                  fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                  fontFamily: 'Manrope', fontWeight: FontWeight.bold),
             ),
           ),
           body: Center(
@@ -42,7 +42,7 @@ class _HomeState extends State<Dashb> {
               },
               child: Text('LOG OUT',
                   style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                      fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
             ),
           ),
         ));
@@ -52,7 +52,7 @@ class _HomeState extends State<Dashb> {
         backgroundColor: Colors.black,
         title: Text(
           'DASHBOARD',
-          style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+          style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
         ),
       ),
       body: Center(
@@ -78,7 +78,7 @@ class _HomeState extends State<Dashb> {
         backgroundColor: Colors.black,
         title: Text(
           'DASHBOARD',
-          style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+          style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
         ),
       ),
     );

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mi_card/intro.dart';
 import 'package:mi_card/savedMosaics.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:mi_card/statsPage.dart';
+import 'package:mi_card/timer1guest.dart';
 
 
 class BuyShirt extends StatefulWidget {
@@ -12,7 +14,7 @@ class BuyShirt extends StatefulWidget {
 class _MyAppState extends State<BuyShirt> {
   Future<void> send() async {
     final Email email = Email(
-      body: "Name: $_name \nSize: $_shirtsize \nAddress: $_address \nAppID: $id \nImage: $imageName.png",
+      body: "Name: $_name \nSize: $_shirtsize \nAddress: $_address \nTime saved: '${double.parse((hour).toStringAsFixed(2))} hrs' \nAppID: $id \nImage: $imageName.png \nDonations: $donations",
       subject: 'Shirt Order',
       recipients: ['srijan.satpathy@gmail.com'],
       isHTML: false,
@@ -30,7 +32,7 @@ class _MyAppState extends State<BuyShirt> {
     if (!mounted) return;
 
     _scaffoldKey.currentState.showSnackBar(SnackBar(
-      content: Text(platformResponse, style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),),
+      content: Text(platformResponse, style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),),
     ));
   }
 
@@ -47,9 +49,9 @@ class _MyAppState extends State<BuyShirt> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text(
-            'Order Your Shirt',
+            r'Order Your Shirt ($20)',
             style:
-                TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
           ),
         ),
         body: Form(
@@ -63,7 +65,7 @@ class _MyAppState extends State<BuyShirt> {
                       Text('Name',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              fontFamily: 'OpenSans',
+                              fontFamily: 'Manrope',
                               color: Colors.black,
                               fontSize: 20,
                               fontWeight: FontWeight.bold)),
@@ -77,7 +79,7 @@ class _MyAppState extends State<BuyShirt> {
                           keyboardType: TextInputType.multiline,
                           obscureText: false,
                           style: TextStyle(
-                              color: Colors.black, fontFamily: 'OpenSans'),
+                              color: Colors.black, fontFamily: 'Manrope'),
                           validator: (input) {
                             if (input.isEmpty) {
                               return 'Provide your name';
@@ -101,7 +103,7 @@ class _MyAppState extends State<BuyShirt> {
                       Text('Shirt size',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              fontFamily: 'OpenSans',
+                              fontFamily: 'Manrope',
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 20)),
@@ -114,7 +116,7 @@ class _MyAppState extends State<BuyShirt> {
                         child: TextFormField(
                           keyboardType: TextInputType.multiline,
                           style: TextStyle(
-                              color: Colors.black, fontFamily: 'OpenSans'),
+                              color: Colors.black, fontFamily: 'Manrope'),
                           validator: (input) {
                             if (input.isEmpty) {
                               return 'Provide your shirt size';
@@ -139,7 +141,7 @@ class _MyAppState extends State<BuyShirt> {
                       Text('Address',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              fontFamily: 'OpenSans',
+                              fontFamily: 'Manrope',
                               color: Colors.black,
                               fontSize: 20,
                               fontWeight: FontWeight.bold)),
@@ -153,7 +155,7 @@ class _MyAppState extends State<BuyShirt> {
                           keyboardType: TextInputType.multiline,
                           obscureText: false,
                           style: TextStyle(
-                              color: Colors.black, fontFamily: 'OpenSans'),
+                              color: Colors.black, fontFamily: 'Manrope'),
                           validator: (input) {
                             if (input.isEmpty) {
                               return 'Provide your address';
@@ -177,7 +179,7 @@ class _MyAppState extends State<BuyShirt> {
                       /*Text('Address',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              fontFamily: 'OpenSans',
+                              fontFamily: 'Manrope',
                               color: Colors.black,
                               fontSize: 20,
                               fontWeight: FontWeight.bold)),
@@ -192,7 +194,7 @@ class _MyAppState extends State<BuyShirt> {
                           keyboardType: TextInputType.multiline,
                           obscureText: false,
                           style: TextStyle(
-                              color: Colors.black, fontFamily: 'OpenSans'),
+                              color: Colors.black, fontFamily: 'Manrope'),
                           validator: (input) {
                             if (input.isEmpty) {
                               return 'Provide your home address';
@@ -232,13 +234,13 @@ class _MyAppState extends State<BuyShirt> {
                                     title: new Text(
                                       "Send email",
                                       style: TextStyle(
-                                          fontFamily: 'OpenSans',
+                                          fontFamily: 'Manrope',
                                           fontWeight: FontWeight.bold),
                                     ),
                                     content: new Text(
                                       "Press send on the automatically created email to officially order your shirt",
                                       style: TextStyle(
-                                          fontFamily: 'OpenSans',
+                                          fontFamily: 'Manrope',
                                           fontWeight: FontWeight.normal),
                                     ),
                                     actions: <Widget>[
@@ -246,7 +248,7 @@ class _MyAppState extends State<BuyShirt> {
                                       new FlatButton(
                                         child: new Text("OK",
                                             style: TextStyle(
-                                                fontFamily: 'OpenSans',
+                                                fontFamily: 'Manrope',
                                                 fontWeight: FontWeight.bold)),
                                         onPressed: () {
                                           final formState =
@@ -274,7 +276,7 @@ class _MyAppState extends State<BuyShirt> {
                                   letterSpacing: 1.5,
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'OpenSans',
+                                  fontFamily: 'Manrope',
                                 ))),
                       ),
                       SizedBox(
@@ -284,7 +286,7 @@ class _MyAppState extends State<BuyShirt> {
                       SizedBox(
                         height: 6.0,
                       ),
-                      Align(child: Text('A TileTee example', style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold)), alignment: Alignment.center,)
+                      Align(child: Text('A TileTee example', style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold)), alignment: Alignment.center,)
                     ]),
               ),
             )));

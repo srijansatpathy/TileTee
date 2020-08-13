@@ -11,24 +11,24 @@ class _MyAppState extends State<Splash1> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async => true,
+      onWillPop: () async => false,
       child: new SplashScreen(
         seconds: 7, //7
         navigateAfterSeconds: new MyApp(),
         title: new Text(
-          'Level One: \n5 minutes of zen',
+          'Level One: \n12 minutes of zen',
           textAlign: TextAlign.center,
           style: new TextStyle(
-              fontFamily: 'OpenSans',
+              fontFamily: 'Manrope',
               fontWeight: FontWeight.bold,
               fontSize: 30.0),
         ),
         loadingText: new Text(
-          'Put the phone down',
+          'Earn 1 tile',
           textAlign: TextAlign.center,
           style: new TextStyle(
-              fontFamily: 'OpenSans',
-              fontSize: 20,
+              fontFamily: 'Manrope',
+              fontSize: 25,
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic),
         ),

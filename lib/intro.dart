@@ -2,16 +2,10 @@ import 'dart:math';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:intro_slider/dot_animation_enum.dart';
-import 'package:intro_slider/intro_slider.dart';
-import 'package:intro_slider/slide_object.dart';
 import 'package:mi_card/main.dart';
 import 'package:mi_card/mainWelcome.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-var id;
-
-class IntroScreen extends StatefulWidget {
+/*class IntroScreen extends StatefulWidget {
   IntroScreen({Key key}) : super(key: key);
 
   @override
@@ -42,14 +36,14 @@ class IntroScreenState extends State<IntroScreen> {
             color: Colors.black,
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description: "Reducing screen time one mosaic at a time",
         styleDescription: TextStyle(
             color: Colors.black,
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/mosaic.png", //Mosaic image
       ),
     );*/
@@ -61,7 +55,7 @@ class IntroScreenState extends State<IntroScreen> {
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "", //"Save mosaics along the way and view after run-throughs",
         styleDescription: TextStyle(
@@ -69,7 +63,7 @@ class IntroScreenState extends State<IntroScreen> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/mosaic2.png", //Gif of me pressing Save Mosaic
       ),
     );
@@ -81,7 +75,7 @@ class IntroScreenState extends State<IntroScreen> {
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "", //"Experience and better the real world, don't like and comment",
         styleDescription: TextStyle(
@@ -89,7 +83,7 @@ class IntroScreenState extends State<IntroScreen> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/time.png", //Gif of timer starting
       ),
     );
@@ -101,7 +95,7 @@ class IntroScreenState extends State<IntroScreen> {
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "", //"Build mosaics that get bigger with each level, which means more complex designs",
         styleDescription: TextStyle(
@@ -109,7 +103,7 @@ class IntroScreenState extends State<IntroScreen> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/heart.png", //Mosaic image
       ),
     );
@@ -120,7 +114,7 @@ class IntroScreenState extends State<IntroScreen> {
             color: Colors.black,
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "Run-throughs can't be exited unless you decide to quit and start over",
         styleDescription: TextStyle(
@@ -128,7 +122,7 @@ class IntroScreenState extends State<IntroScreen> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/quit.jpg", //Image of app exit dialog
       ),
     );*/
@@ -140,7 +134,7 @@ class IntroScreenState extends State<IntroScreen> {
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "", //"Show the world what's possible when you spend less time surfing and scrolling",
         styleDescription: TextStyle(
@@ -148,7 +142,7 @@ class IntroScreenState extends State<IntroScreen> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/shirt2.png", //Image of shirt
       ),
     );
@@ -160,7 +154,7 @@ class IntroScreenState extends State<IntroScreen> {
     Widget optionOne = SimpleDialogOption(
       child: const Text(
         '(A) Music',
-        style: TextStyle(fontFamily: 'OpenSans'),
+        style: TextStyle(fontFamily: 'Manrope'),
       ),
       onPressed: () {
         Navigator.of(context).pop();
@@ -170,15 +164,15 @@ class IntroScreenState extends State<IntroScreen> {
             return AlertDialog(
               title: new Text('Play on.',
                   style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                      fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
               content: new Text(
                   'Why stare at a screen when you can live and breathe music?',
-                  style: TextStyle(fontFamily: 'OpenSans')),
+                  style: TextStyle(fontFamily: 'Manrope')),
               actions: <Widget>[
                 new FlatButton(
                   child: new Text("BACK",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -187,7 +181,7 @@ class IntroScreenState extends State<IntroScreen> {
                 new FlatButton(
                   child: new Text("LET'S BEGIN",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Flushbar(
                       message: 'Loading',
@@ -195,7 +189,7 @@ class IntroScreenState extends State<IntroScreen> {
                         'Loading...',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'OpenSans',
+                            fontFamily: 'Manrope',
                             color: Colors.black,
                             fontSize: 15.0),
                       ),
@@ -221,7 +215,7 @@ class IntroScreenState extends State<IntroScreen> {
     Widget optionTwo = SimpleDialogOption(
       child: const Text(
         '(B) Reading',
-        style: TextStyle(fontFamily: 'OpenSans'),
+        style: TextStyle(fontFamily: 'Manrope'),
       ),
       onPressed: () {
         Navigator.of(context).pop();
@@ -231,15 +225,15 @@ class IntroScreenState extends State<IntroScreen> {
             return AlertDialog(
               title: new Text('Read on.',
                   style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                      fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
               content: new Text(
                   'Why stare at a screen when you can absorb pages full of imagination?',
-                  style: TextStyle(fontFamily: 'OpenSans')),
+                  style: TextStyle(fontFamily: 'Manrope')),
               actions: <Widget>[
                 new FlatButton(
                   child: new Text("BACK",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -248,7 +242,7 @@ class IntroScreenState extends State<IntroScreen> {
                 new FlatButton(
                   child: new Text("LET'S BEGIN",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Flushbar(
                       message: 'Loading',
@@ -256,7 +250,7 @@ class IntroScreenState extends State<IntroScreen> {
                         'Loading...',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'OpenSans',
+                            fontFamily: 'Manrope',
                             color: Colors.black,
                             fontSize: 15.0),
                       ),
@@ -282,7 +276,7 @@ class IntroScreenState extends State<IntroScreen> {
     Widget optionThree = SimpleDialogOption(
       child: const Text(
         '(C) Travel',
-        style: TextStyle(fontFamily: 'OpenSans'),
+        style: TextStyle(fontFamily: 'Manrope'),
       ),
       onPressed: () {
         Navigator.of(context).pop();
@@ -292,15 +286,15 @@ class IntroScreenState extends State<IntroScreen> {
             return AlertDialog(
               title: new Text('Explore on.',
                   style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                      fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
               content: new Text(
                   'Why stare at a screen when you can experience the wonders of the real world?',
-                  style: TextStyle(fontFamily: 'OpenSans')),
+                  style: TextStyle(fontFamily: 'Manrope')),
               actions: <Widget>[
                 new FlatButton(
                   child: new Text("BACK",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -309,7 +303,7 @@ class IntroScreenState extends State<IntroScreen> {
                 new FlatButton(
                   child: new Text("LET'S BEGIN",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Flushbar(
                       message: 'Loading',
@@ -317,7 +311,7 @@ class IntroScreenState extends State<IntroScreen> {
                         'Loading...',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'OpenSans',
+                            fontFamily: 'Manrope',
                             color: Colors.black,
                             fontSize: 15.0),
                       ),
@@ -343,7 +337,7 @@ class IntroScreenState extends State<IntroScreen> {
     Widget optionFour = SimpleDialogOption(
       child: const Text(
         '(D) Sports',
-        style: TextStyle(fontFamily: 'OpenSans'),
+        style: TextStyle(fontFamily: 'Manrope'),
       ),
       onPressed: () {
         Navigator.of(context).pop();
@@ -353,15 +347,15 @@ class IntroScreenState extends State<IntroScreen> {
             return AlertDialog(
               title: new Text('Play on.',
                   style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                      fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
               content: new Text(
                   'Why stare at a screen when you can crush the competition while breaking out in a sweat?',
-                  style: TextStyle(fontFamily: 'OpenSans')),
+                  style: TextStyle(fontFamily: 'Manrope')),
               actions: <Widget>[
                 new FlatButton(
                   child: new Text("BACK",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -370,7 +364,7 @@ class IntroScreenState extends State<IntroScreen> {
                 new FlatButton(
                   child: new Text("LET'S BEGIN",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Flushbar(
                       message: 'Loading',
@@ -378,7 +372,7 @@ class IntroScreenState extends State<IntroScreen> {
                         'Loading...',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'OpenSans',
+                            fontFamily: 'Manrope',
                             color: Colors.black,
                             fontSize: 15.0),
                       ),
@@ -404,7 +398,7 @@ class IntroScreenState extends State<IntroScreen> {
     Widget optionFive = SimpleDialogOption(
       child: const Text(
         '(E) Other',
-        style: TextStyle(fontFamily: 'OpenSans'),
+        style: TextStyle(fontFamily: 'Manrope'),
       ),
       onPressed: () {
         Navigator.of(context).pop();
@@ -414,15 +408,15 @@ class IntroScreenState extends State<IntroScreen> {
             return AlertDialog(
               title: new Text('Right on.',
                   style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                      fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
               content: new Text(
                   'Why stare at a screen when you can do what you truly love?',
-                  style: TextStyle(fontFamily: 'OpenSans')),
+                  style: TextStyle(fontFamily: 'Manrope')),
               actions: <Widget>[
                 new FlatButton(
                   child: new Text("BACK",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -431,7 +425,7 @@ class IntroScreenState extends State<IntroScreen> {
                 new FlatButton(
                   child: new Text("LET'S BEGIN",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Flushbar(
                       message: 'Loading',
@@ -439,7 +433,7 @@ class IntroScreenState extends State<IntroScreen> {
                         'Loading...',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'OpenSans',
+                            fontFamily: 'Manrope',
                             color: Colors.black,
                             fontSize: 15.0),
                       ),
@@ -465,7 +459,7 @@ class IntroScreenState extends State<IntroScreen> {
     Widget optionSix = SimpleDialogOption(
       child: const Text(
         '(F) Smartphone scrolling',
-        style: TextStyle(fontFamily: 'OpenSans'),
+        style: TextStyle(fontFamily: 'Manrope'),
       ),
       onPressed: () {
         Navigator.of(context).pop();
@@ -475,15 +469,15 @@ class IntroScreenState extends State<IntroScreen> {
             return AlertDialog(
               title: new Text("Well, you're in the right place.",
                   style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                      fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
               content: new Text(
                   'Why stare at a screen when you could build some mosaics?',
-                  style: TextStyle(fontFamily: 'OpenSans')),
+                  style: TextStyle(fontFamily: 'Manrope')),
               actions: <Widget>[
                 new FlatButton(
                   child: new Text("BACK",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -492,7 +486,7 @@ class IntroScreenState extends State<IntroScreen> {
                 new FlatButton(
                   child: new Text("LET'S BEGIN",
                       style: TextStyle(
-                          fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                          fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                   onPressed: () {
                     Flushbar(
                       message: 'Loading',
@@ -500,7 +494,7 @@ class IntroScreenState extends State<IntroScreen> {
                         'Loading...',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'OpenSans',
+                            fontFamily: 'Manrope',
                             color: Colors.black,
                             fontSize: 15.0),
                       ),
@@ -528,7 +522,7 @@ class IntroScreenState extends State<IntroScreen> {
     SimpleDialog dialog = SimpleDialog(
       title: const Text(
         "Select your favorite hobby/interest:",
-        style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+        style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
       ),
       children: <Widget>[
         optionOne,
@@ -595,7 +589,7 @@ class IntroScreenState extends State<IntroScreen> {
     return Icon(
       Icons.navigate_next,
       color: Colors.white,
-      size: 30.0,
+      size: 40.0,
     );
   }
 
@@ -603,7 +597,7 @@ class IntroScreenState extends State<IntroScreen> {
     return Icon(
       Icons.arrow_forward,
       color: Colors.white,
-      size: 30.0,
+      size: 40.0,
     );
   }
 
@@ -611,7 +605,7 @@ class IntroScreenState extends State<IntroScreen> {
     return Icon(
       Icons.skip_next,
       color: Colors.white,
-      size: 30.0,
+      size: 40.0,
     );
   }
 
@@ -727,6 +721,248 @@ class IntroScreenState extends State<IntroScreen> {
 
       // On tab change completed
       onTabChangeCompleted: this.onTabChangeCompleted,
+    );
+  }
+}*/
+String id;
+
+class IntroScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: PageViewDemo(),
+        ),
+      ),
+    );
+  }
+}
+
+class PageViewDemo extends StatefulWidget {
+  @override
+  _PageViewDemoState createState() => _PageViewDemoState();
+}
+
+class _PageViewDemoState extends State<PageViewDemo> {
+
+  PageController _controller = PageController(
+    initialPage: 0,
+  );
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return PageView(
+      controller: _controller,
+      children: [
+        MyPage1Widget(),
+        MyPage2Widget(),
+        MyPage3Widget(),
+        MyPage4Widget(),
+      ],
+    );
+  }
+}
+
+class MyPage1Widget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          Expanded(
+            flex: 20,
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(child: Center(child: Text('You will spend 10 years of your life on a phone', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Manrope', color: Colors.blue, fontSize: 25),))),
+            ),
+          ),
+          Expanded(
+            flex: 60,
+            child: Container(decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/usingPhone.jpg"), fit: BoxFit.fitWidth))),
+          ),
+          Expanded(
+            flex: 20,
+            child: Container(child: Center(child: Text('<- Swipe', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Manrope', color: Colors.blue, fontSize: 20),))),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyPage2Widget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xff43AEE2),
+      body: Column(
+        children: [
+          Expanded(
+            flex: 20,
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(child: Center(child: Text('Use TileTee to claim some time back', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Manrope', color: Colors.white, fontSize: 25),))),
+            ),
+          ),
+          Expanded(
+            flex: 60,
+            child: Container(decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/saveTime.jpg"), fit: BoxFit.fitWidth))),
+          ),
+          Expanded(
+            flex: 20,
+            child: Container(child: Center(child: Text('<- Swipe', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Manrope', color: Colors.white, fontSize: 20),))),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyPage3Widget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          Expanded(
+            flex: 20,
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(child: Center(child: Text('Complete levels, earn tiles, build mosaics', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Manrope', color: Colors.blue, fontSize: 25),))),
+            ),
+          ),
+          Expanded(
+            flex: 60,
+            child: Container(decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/collectTiles.jpg"), fit: BoxFit.fitWidth))),
+          ),
+          Expanded(
+            flex: 20,
+            child: Container(child: Center(child: Text('<- Swipe', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Manrope', color: Colors.blue, fontSize: 20),))),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyPage4Widget extends StatelessWidget {
+  String _email, _password;
+
+  static const _chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+  Random _rnd = Random.secure();
+
+  String getRandomString(int length) => String.fromCharCodes(Iterable.generate(
+      length, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
+
+  @override
+  Widget build(BuildContext context) {
+    void onDonePress() async {
+      _email = (getRandomString(6) + '@random.com').trim();
+      _password = getRandomString(6).trim();
+      print(_email);
+      print(_password);
+      try {
+        FirebaseUser user = (await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(
+            email: _email, password: _password))
+            .user;
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString('email', 'useremail@random.com');
+        id = user.email;
+      } catch (e) {
+        _email = (getRandomString(6) + '@random.com').trim();
+        FirebaseUser user = (await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(
+            email: _email, password: _password))
+            .user;
+        id = user.email;
+      }
+      /*try {
+      FirebaseUser user = (await FirebaseAuth.instance
+              .signInWithEmailAndPassword(email: _email, password: _password))
+          .user;
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('email', 'useremail@random.com');
+    } catch (e) {}*/
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Main(), fullscreenDialog: true),
+      );
+      strCurPage = 'page1';
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('stringValue', strCurPage);
+      print('1 hello!');
+    }
+    return Scaffold(
+      backgroundColor: Color(0xffA9CEE1),
+      body: Column(
+        children: [
+          Expanded(
+            flex: 20,
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(child: Center(child: Text('Take the first step and inspire others', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Manrope', color: Colors.black, fontSize: 25),))),
+            ),
+          ),
+          Expanded(
+            flex: 60,
+            child: Container(decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/stairs.jpg"), fit: BoxFit.fitWidth))),
+          ),
+          Expanded(
+            flex: 20,
+            child: Container(child: Center(
+              child: FloatingActionButton.extended(onPressed: (){
+                Flushbar(
+                  message: 'Loading',
+                  messageText: Text(
+                    'Loading...',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Manrope',
+                        color: Colors.black,
+                        fontSize: 15.0),
+                  ),
+                  duration: Duration(seconds: 3),
+                  margin: EdgeInsets.all(10.0),
+                  borderRadius: 8,
+                  backgroundColor: Colors.white.withOpacity(0.8),
+                  icon: Icon(
+                    Icons.refresh,
+                    size: 28.0,
+                    color: Colors.blue,
+                  ),
+                )..show(context);
+                onDonePress();
+              }, label: Text('GET STARTED',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Manrope',
+                    color: Colors.black,
+                    fontSize: 15.0),)),
+            )),
+          ),
+        ],
+      ),
     );
   }
 }

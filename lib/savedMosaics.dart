@@ -6,7 +6,7 @@ import 'package:mi_card/buyShirt.dart';
 import 'package:mi_card/guestGrid1.dart';
 import 'package:mi_card/intro.dart';
 
-var imageName;
+int imageName;
 
 class SavedMosaics extends StatelessWidget {
   Widget makeImagesGrid() {
@@ -21,24 +21,58 @@ class SavedMosaics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          title: Text(
-            'Mosaic Gallery',
-            style:
-                TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
-          ),
-          backgroundColor: Colors.black,
-        ),
-        body: makeImagesGrid(),
+    if (imageNum == 0){
+      return Scaffold(
+            backgroundColor: Colors.white,
+            appBar: AppBar(
+          /*leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+    onPressed: () => Navigator.of(context).pop(),
+    ),*/
+    title: Text(
+    'Mosaic Gallery',
+    style:
+    TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
+    ),
+    backgroundColor: Colors.black,
+    ),
+    body: Center(
+      child: Text(
+        'Nothing here yet',
+        style:
+        TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold, fontSize: 35),
       ),
+    ),
     );
+    }
+    else{
+      return Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            /*leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () => Navigator.of(context).pop(),
+            ),*/
+            title: Text(
+              'Mosaic Gallery',
+              style:
+              TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
+            ),
+            backgroundColor: Colors.black,
+          ),
+          body: makeImagesGrid(),
+          floatingActionButton: Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30.0, bottom: 30.0),
+              child: FloatingActionButton.extended(
+                  onPressed: null,
+                  backgroundColor: Colors.blue,
+                  label: Text('Tap mosaic to buy a TileTee', style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold, color: Colors.black, fontSize: 15.0),)),
+            ),
+        ),
+      );
+    }
   }
 }
 
@@ -128,12 +162,12 @@ class _ImageGridItemState extends State<ImageGridItem> {
                   return AlertDialog(
                     content: new Text('Transform mosaic into a shirt?',
                         style: TextStyle(
-                            fontFamily: 'OpenSans', fontWeight: FontWeight.bold)),
+                            fontFamily: 'Manrope', fontWeight: FontWeight.bold)),
                     actions: <Widget>[
                       new FlatButton(
                         child: new Text("Yes",
                             style: TextStyle(
-                                fontFamily: 'OpenSans',
+                                fontFamily: 'Manrope',
                                 fontWeight: FontWeight.bold)),
                         onPressed: () {
                           Navigator.of(context).pop();
@@ -147,7 +181,7 @@ class _ImageGridItemState extends State<ImageGridItem> {
                       new FlatButton(
                         child: new Text("No",
                             style: TextStyle(
-                                fontFamily: 'OpenSans',
+                                fontFamily: 'Manrope',
                                 fontWeight: FontWeight.bold)),
                         onPressed: () {
                           Navigator.of(context).pop();

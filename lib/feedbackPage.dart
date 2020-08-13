@@ -43,20 +43,25 @@ class _MyAppState extends State<FeedbackPage> {
     if (!mounted) return;
 
     _scaffoldKey.currentState.showSnackBar(SnackBar(
-      content: Text(platformResponse, style: TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),),
+      content: Text(platformResponse, style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),),
     ));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       key: _scaffoldKey,
         appBar: AppBar(
+          /*leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),*/
           backgroundColor: Colors.black,
           title: Text(
             'Send Feedback',
             style:
-                TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
           ),
         ),
         body: Align(
@@ -70,14 +75,14 @@ class _MyAppState extends State<FeedbackPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text('As the world sees a surge in screen time, we believe it is important to remind people of the possibilities that exist outside their devices. If you believe in our cause, help us improve this idea.\n\n-Team TileTee',
-                        style: TextStyle(fontFamily: 'OpenSans', fontStyle: FontStyle.italic),),
+                        style: TextStyle(fontFamily: 'Manrope', fontStyle: FontStyle.italic, fontSize: 15.0),),
                         SizedBox(
                           height: 15.0,
                         ),
                         Text('Thoughts/comments/suggestions:',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                                fontFamily: 'OpenSans',
+                                fontFamily: 'Manrope',
                                 color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold)),
@@ -92,7 +97,7 @@ class _MyAppState extends State<FeedbackPage> {
                             keyboardType: TextInputType.multiline,
                             obscureText: false,
                             style: TextStyle(
-                                color: Colors.black, fontFamily: 'OpenSans'),
+                                color: Colors.black, fontFamily: 'Manrope'),
                             validator: (input) {
                               if (input.isEmpty) {
                                 return 'Provide feedback';
@@ -132,13 +137,13 @@ class _MyAppState extends State<FeedbackPage> {
                                       title: new Text(
                                         "Send email",
                                         style: TextStyle(
-                                            fontFamily: 'OpenSans',
+                                            fontFamily: 'Manrope',
                                             fontWeight: FontWeight.bold),
                                       ),
                                       content: new Text(
                                         "Press send on the automatically created email to record your feedback",
                                         style: TextStyle(
-                                            fontFamily: 'OpenSans',
+                                            fontFamily: 'Manrope',
                                             fontWeight: FontWeight.normal),
                                       ),
                                       actions: <Widget>[
@@ -146,7 +151,7 @@ class _MyAppState extends State<FeedbackPage> {
                                         new FlatButton(
                                           child: new Text("OK",
                                               style: TextStyle(
-                                                  fontFamily: 'OpenSans',
+                                                  fontFamily: 'Manrope',
                                                   fontWeight: FontWeight.bold)),
                                           onPressed: () {
                                             final formState =
@@ -174,9 +179,9 @@ class _MyAppState extends State<FeedbackPage> {
                                     letterSpacing: 1.5,
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.bold,
-                                    fontFamily: 'OpenSans',
+                                    fontFamily: 'Manrope',
                                   ))),
-                        )
+                        ),
                       ]),
                 ),
               )),

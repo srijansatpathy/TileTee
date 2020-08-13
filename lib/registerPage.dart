@@ -20,7 +20,7 @@ class _SignUpState extends State<SignUpPage> {
           title: Text(
             'REGISTER',
             style:
-                TextStyle(fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.bold),
           ),
         ),
         body: Form(
@@ -31,7 +31,7 @@ class _SignUpState extends State<SignUpPage> {
               Text('Email',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      fontFamily: 'OpenSans',
+                      fontFamily: 'Manrope',
                       color: Colors.black,
                       fontSize: 23,
                       fontWeight: FontWeight.bold)),
@@ -43,7 +43,7 @@ class _SignUpState extends State<SignUpPage> {
                 height: 50.0,
                 child: TextFormField(
                   obscureText: false,
-                  style: TextStyle(color: Colors.black, fontFamily: 'OpenSans'),
+                  style: TextStyle(color: Colors.black, fontFamily: 'Manrope'),
                   validator: (input) {
                     if (input.isEmpty) {
                       return 'Provide an email';
@@ -64,7 +64,7 @@ class _SignUpState extends State<SignUpPage> {
               Text('Password',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      fontFamily: 'OpenSans',
+                      fontFamily: 'Manrope',
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 23)),
@@ -75,7 +75,7 @@ class _SignUpState extends State<SignUpPage> {
                 alignment: Alignment.centerLeft,
                 height: 50.0,
                 child: TextFormField(
-                  style: TextStyle(color: Colors.black, fontFamily: 'OpenSans'),
+                  style: TextStyle(color: Colors.black, fontFamily: 'Manrope'),
                   validator: (input) {
                     if (input.length < 6) {
                       return 'Must be at least six characters';
@@ -119,13 +119,13 @@ class _SignUpState extends State<SignUpPage> {
                                 title: new Text(
                                   "Verification",
                                   style: TextStyle(
-                                      fontFamily: 'OpenSans',
+                                      fontFamily: 'Manrope',
                                       fontWeight: FontWeight.bold),
                                 ),
                                 content: new Text(
                                   "Please check your email for the verification link, then proceed to sign in.",
                                   style: TextStyle(
-                                      fontFamily: 'OpenSans',
+                                      fontFamily: 'Manrope',
                                       fontWeight: FontWeight.bold),
                                 ),
                                 actions: <Widget>[
@@ -133,7 +133,7 @@ class _SignUpState extends State<SignUpPage> {
                                   new FlatButton(
                                     child: new Text("OK",
                                         style: TextStyle(
-                                            fontFamily: 'OpenSans',
+                                            fontFamily: 'Manrope',
                                             fontWeight: FontWeight.bold)),
                                     onPressed: () {
                                       Navigator.of(context).pop();
@@ -156,14 +156,14 @@ class _SignUpState extends State<SignUpPage> {
                               return AlertDialog(
                                 content: new Text(e.message,
                                     style: TextStyle(
-                                        fontFamily: 'OpenSans',
+                                        fontFamily: 'Manrope',
                                         fontWeight: FontWeight.bold)),
                                 actions: <Widget>[
                                   // usually buttons at the bottom of the dialog
                                   new FlatButton(
                                     child: new Text("OK",
                                         style: TextStyle(
-                                            fontFamily: 'OpenSans',
+                                            fontFamily: 'Manrope',
                                             fontWeight: FontWeight.bold)),
                                     onPressed: () {
                                       Navigator.of(context).pop();
@@ -187,7 +187,7 @@ class _SignUpState extends State<SignUpPage> {
                           letterSpacing: 1.5,
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'OpenSans',
+                          fontFamily: 'Manrope',
                         ))),
               )
             ])));

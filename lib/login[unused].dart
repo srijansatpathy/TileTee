@@ -35,7 +35,7 @@ Widget _buildEmail() {
     children: <Widget>[
       Text('Email',
           style: TextStyle(
-              fontFamily: 'OpenSans', color: Colors.black, fontSize: 20)),
+              fontFamily: 'Manrope', color: Colors.black, fontSize: 20)),
       SizedBox(
         height: 10.0,
       ),
@@ -45,7 +45,7 @@ Widget _buildEmail() {
           height: 60.0,
           child: TextField(
               obscureText: false,
-              style: TextStyle(color: Colors.black, fontFamily: 'OpenSans'),
+              style: TextStyle(color: Colors.black, fontFamily: 'Manrope'),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 contentPadding: EdgeInsets.only(top: 14.0),
@@ -66,7 +66,7 @@ Widget _buildPassword() {
     children: <Widget>[
       Text('Password',
           style: TextStyle(
-              fontFamily: 'OpenSans', color: Colors.black, fontSize: 20)),
+              fontFamily: 'Manrope', color: Colors.black, fontSize: 20)),
       SizedBox(
         height: 10.0,
       ),
@@ -76,7 +76,7 @@ Widget _buildPassword() {
           height: 60.0,
           child: TextField(
               obscureText: true,
-              style: TextStyle(color: Colors.black, fontFamily: 'OpenSans'),
+              style: TextStyle(color: Colors.black, fontFamily: 'Manrope'),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 contentPadding: EdgeInsets.only(top: 14.0),
@@ -98,7 +98,7 @@ Widget _buildForgotPassword() {
         onPressed: () => print('Forgot Password Button Pressed'),
         child: Text('Forgot password?',
             style: TextStyle(
-                color: Colors.black, fontSize: 15, fontFamily: 'OpenSans'))),
+                color: Colors.black, fontSize: 15, fontFamily: 'Manrope'))),
   );
 }
 
@@ -131,7 +131,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                 letterSpacing: 1.5,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'OpenSans',
+                fontFamily: 'Manrope',
               ))),
     );
   }
@@ -145,14 +145,14 @@ class _LoginRegisterState extends State<LoginRegister> {
           style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w400,
-              fontFamily: 'OpenSans'),
+              fontFamily: 'Manrope'),
         ),
         SizedBox(
           height: 20.0,
         ),
         Text('Sign in with',
             style: TextStyle(
-                color: Colors.black, fontSize: 15.0, fontFamily: 'OpenSans'))
+                color: Colors.black, fontSize: 15.0, fontFamily: 'Manrope'))
       ],
     );
   }
@@ -217,7 +217,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                   color: Colors.black,
                   fontSize: 18.00,
                   fontWeight: FontWeight.w400,
-                  fontFamily: 'OpenSans'),
+                  fontFamily: 'Manrope'),
             ),
             TextSpan(
               text: ' Sign up',
@@ -225,7 +225,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                   color: Colors.black,
                   fontSize: 18.00,
                   fontWeight: FontWeight.w400,
-                  fontFamily: 'OpenSans'),
+                  fontFamily: 'Manrope'),
             ),
           ],
         )));

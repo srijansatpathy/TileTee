@@ -4,15 +4,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:mi_card/loading2guest.dart';
 import 'package:mi_card/mainWelcome.dart';
+import 'package:mi_card/timer1guest.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:mi_card/main.dart';
 import 'dart:ui' as ui;
 import 'package:mi_card/intro.dart';
 import 'package:flushbar/flushbar.dart';
+import 'dart:async';
 
-var imageNum = 0;
+int imageNum;
 
 class Grid1 extends StatelessWidget {
   @override
@@ -23,7 +23,7 @@ class Grid1 extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(scaffoldBackgroundColor: Colors.white),
         home: Scaffold(
-          floatingActionButtonLocation:
+          /*floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           floatingActionButton: Padding(
             padding: const EdgeInsets.only(bottom: 142.0, right: 10, left: 10),
@@ -41,13 +41,13 @@ class Grid1 extends StatelessWidget {
                           content: new Text(
                               'Quit the run-through?',
                               style: TextStyle(
-                                  fontFamily: 'OpenSans',
+                                  fontFamily: 'Manrope',
                                   fontWeight: FontWeight.bold)),
                           actions: <Widget>[
                             new FlatButton(
                               child: new Text("Yes",
                                   style: TextStyle(
-                                      fontFamily: 'OpenSans',
+                                      fontFamily: 'Manrope',
                                       fontWeight: FontWeight.bold)),
                               onPressed: () async {
                                 strCurPage = 'page1';
@@ -65,7 +65,7 @@ class Grid1 extends StatelessWidget {
                             new FlatButton(
                               child: new Text("No",
                                   style: TextStyle(
-                                      fontFamily: 'OpenSans',
+                                      fontFamily: 'Manrope',
                                       fontWeight: FontWeight.bold)),
                               onPressed: () {
                                 Navigator.of(context).pop();
@@ -90,7 +90,7 @@ class Grid1 extends StatelessWidget {
                     'Exit',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'OpenSans',
+                        fontFamily: 'Manrope',
                         color: Colors.black),
                   ),
                   backgroundColor: Colors.blue,
@@ -127,19 +127,33 @@ class Grid1 extends StatelessWidget {
                     'Next Level',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'OpenSans',
+                        fontFamily: 'Manrope',
                         color: Colors.black),
                   ),
                   backgroundColor: Colors.blue,
                 )
               ],
             ),
-          ),
+          ),*/
           appBar: AppBar(
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.white,
+                  size: 40.0,
+                ),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => Main()));
+                },
+              )
+            ],
             title: Text(
-              "LEVEL ONE (tap tile to select color)",
+              "1 TILE (tap to select color)",
               style: TextStyle(
-                  fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                  fontFamily: 'Manrope', fontWeight: FontWeight.bold),
             ),
             backgroundColor: Colors.black,
           ),
@@ -236,7 +250,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   "NEXT LEVEL",
                   style: TextStyle(
-                      fontFamily: 'OpenSans', fontWeight: FontWeight.bold),
+                      fontFamily: 'Manrope', fontWeight: FontWeight.bold),
                 ),
                 onPressed: () async {
                   Navigator.push(
@@ -256,7 +270,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(top: 10, bottom: 40),
             child: SizedBox(
               width: double.maxFinite,
-              height: 44,
+              height: 50,
               child: RaisedButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
@@ -265,8 +279,8 @@ class _HomePageState extends State<HomePage> {
                   "Save Mosaic",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
-                    fontFamily: 'OpenSans',
+                    fontSize: 25,
+                    fontFamily: 'Manrope',
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -276,13 +290,18 @@ class _HomePageState extends State<HomePage> {
                   SharedPreferences prefs =
                       await SharedPreferences.getInstance();
                   prefs.setInt('intValue', imageNum);
+                  tileNum -= 1;
+                  SharedPreferences _prefs =
+                  await SharedPreferences.getInstance();
+                  _prefs.setInt('tiles', tileNum);
                   Flushbar(
-                    message: 'Saved to Mosaic Gallery',
+                    message: 'You just used 1 tile',
                     messageText: Text(
-                      'Saved to Mosaic Gallery',
+                      'You just used 1 tile',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'OpenSans',
+                          fontFamily: 'Manrope',
+                          fontSize: 15.0,
                           color: Colors.white),
                     ),
                     duration: Duration(seconds: 3),
@@ -290,11 +309,19 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: 8,
                     backgroundColor: Colors.black,
                     icon: Icon(
-                      Icons.save,
+                      Icons.crop_square,
                       size: 28.0,
                       color: Colors.blue,
                     ),
                   )..show(context);
+                  Future.delayed(const Duration(seconds: 3), () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Main()),
+                      );
+                    });
+                  });
                 },
               ),
             ),

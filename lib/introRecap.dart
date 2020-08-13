@@ -27,14 +27,14 @@ class IntroScreenState extends State<IntroRecap> {
             color: Colors.black,
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description: "Reducing screen time one mosaic at a time",
         styleDescription: TextStyle(
             color: Colors.black,
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/mosaic.png", //Mosaic image
       ),
     );*/
@@ -46,7 +46,7 @@ class IntroScreenState extends State<IntroRecap> {
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "", //"Save mosaics along the way and view after run-throughs",
         styleDescription: TextStyle(
@@ -54,7 +54,7 @@ class IntroScreenState extends State<IntroRecap> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/mosaic2.png", //Gif of me pressing Save Mosaic
       ),
     );
@@ -66,7 +66,7 @@ class IntroScreenState extends State<IntroRecap> {
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "", //"Experience and better the real world, don't like and comment",
         styleDescription: TextStyle(
@@ -74,7 +74,7 @@ class IntroScreenState extends State<IntroRecap> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/time.png", //Gif of timer starting
       ),
     );
@@ -86,7 +86,7 @@ class IntroScreenState extends State<IntroRecap> {
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "", //"Build mosaics that get bigger with each level, which means more complex designs",
         styleDescription: TextStyle(
@@ -94,7 +94,7 @@ class IntroScreenState extends State<IntroRecap> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/heart.png", //Mosaic image
       ),
     );
@@ -105,7 +105,7 @@ class IntroScreenState extends State<IntroRecap> {
             color: Colors.black,
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "Run-throughs can't be exited unless you decide to quit and start over",
         styleDescription: TextStyle(
@@ -113,7 +113,7 @@ class IntroScreenState extends State<IntroRecap> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/quit.jpg", //Image of app exit dialog
       ),
     );*/
@@ -125,7 +125,7 @@ class IntroScreenState extends State<IntroRecap> {
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         description:
             "", //"Show the world what's possible when you spend less time surfing and scrolling",
         styleDescription: TextStyle(
@@ -133,7 +133,7 @@ class IntroScreenState extends State<IntroRecap> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
+            fontFamily: 'Manrope'),
         pathImage: "images/shirt2.png", //Image of shirt
       ),
     );
@@ -161,7 +161,7 @@ class IntroScreenState extends State<IntroRecap> {
     return Icon(
       Icons.navigate_next,
       color: Colors.white,
-      size: 30.0,
+      size: 40.0,
     );
   }
 
@@ -169,7 +169,7 @@ class IntroScreenState extends State<IntroRecap> {
     return Icon(
       Icons.arrow_forward,
       color: Colors.white,
-      size: 30.0,
+      size: 40.0,
     );
   }
 
@@ -177,7 +177,7 @@ class IntroScreenState extends State<IntroRecap> {
     return Icon(
       Icons.skip_next,
       color: Colors.white,
-      size: 30.0,
+      size: 40.0,
     );
   }
 

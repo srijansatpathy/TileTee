@@ -52,24 +52,8 @@ flutter:
 
     # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/tenMin.mp3
-    - assets/oneMin.mp3
-    - assets/sunset.mp3
-    - images/brush-307607_1280.png
-    - images/castle-378352_1280.png
-    - images/chronograph-160753_1280.png
-    - images/lock.png
-    - images/paint.png
     - images/time.png
     - images/Colors/
-    - images/google.png
-    - images/facebook.png
-    - images/logo.png
-    - images/letterC.png
-    - images/dudePhone.png
-    - images/timer.jpg
-    - images/saved.jpg
-    - images/quit.jpg
     - images/mosaic.png
     - images/shirt.png
     - images/mosaic2.png
@@ -79,6 +63,10 @@ flutter:
     - images/shirt2.png
     - images/logozoom.png
     - images/logosplash.png
+    - images/usingPhone.jpg
+    - images/stairs.jpg
+    - images/saveTime.jpg
+    - images/collectTiles.jpg
 
   fonts:
     - family: AbrilFatface
@@ -87,6 +75,9 @@ flutter:
     - family: OpenSans
       fonts:
         - asset: fonts/OpenSans-Regular.ttf
+    - family: Manrope
+      fonts:
+        - asset: fonts/Manrope-Regular.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
